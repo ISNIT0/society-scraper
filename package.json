@@ -1,0 +1,24 @@
+{
+  "name": "society-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/minimist": "^1.2.0",
+    "@types/mkdirp": "^0.5.2",
+    "@types/puppeteer": "^1.20.2",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "ora": "^4.0.2",
+    "puppeteer": "^1.20.0",
+    "ts-node": "^8.4.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.6.4"
+  }
+}

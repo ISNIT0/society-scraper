@@ -1,0 +1,77 @@
+import { Page, ElementHandle } from "puppeteer";
+import { resolve } from "url";
+
+export type SocietyData = any; // TODO: define properly
+
+export interface SocietyContext {
+    url?: string;
+    el?: ElementHandle;
+}
+
+export abstract class SocietyScraper {
+    abstract whitelist?: boolean;
+    abstract societyName: string;
+    abstract entryUrl: string;
+    public async getSocietiesContext(page: Page): Promise<SocietyContext[]> {
+        if (!this.contextSelector) {
+            throw new Error(`Neither [getSocietiesContext()] or [contextSelector] have been overridden`);
+        }
+        const socEls = await page.$$(this.contextSelector);
+        return await Promise.all(
+            Array.from(socEls)
+                .map(async (socEl) => {
+                    const tagName = await socEl.evaluate((el) => el.tagName);
+                    if (tagName === 'A') {
+                        return {
+                            url: resolve(this.entryUrl, await socEl.evaluate((a) => a.getAttribute('href')) as string),
+                        };
+                    } else {
+                        return {
+                            el: socEl,
+                        };
+                    }
+                })
+        );
+    }
+    abstract contextSelector?: string;
+
+    public async getSocietyData(element: ElementHandle): Promise<SocietyData> {
+        if (!this.dataSelectors) {
+            throw new Error(`Neither [getSocietyData()] or [dataSelectors] have been overridden`);
+        }
+        const ret: SocietyData = {
+            url: await element.evaluate(() => location.href),
+        };
+        for (const [key, selector] of Object.entries(this.dataSelectors)) {
+            try {
+                const { textContent, href } = await element.$eval(selector!, (el) => {
+                    return {
+                        textContent: window.extractText(el),
+                        href: el.getAttribute('href'),
+                    };
+                });
+                if (href) {
+                    if (href.startsWith('mailto:')) {
+                        ret[key] = href.replace('mailto:', '');
+                        continue;
+                    } else {
+                        ret[key] = href;
+                    }
+                } else {
+                    ret[key] = textContent;
+                }
+            } catch (err) {
+                // console.warn(`Failed to get [${selector}]`, err);
+            }
+        }
+        return ret;
+    };
+    abstract dataSelectors?: {
+        title: string,
+        url?: string,
+        description?: string,
+        email?: string,
+        secretaryName?: string,
+        [key: string]: string | undefined,
+    }
+}
