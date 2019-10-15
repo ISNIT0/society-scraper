@@ -6,7 +6,7 @@ import { SocietyContext, SocietyScraper } from './SocietyScraper';
 import { postProcessData } from './util';
 import { join } from 'path';
 import mkdirp = require('mkdirp');
-import { writeFileSync } from 'fs';
+import { StructuredStreamWriter, StructuredFormat } from 'structured-stream-writer';
 
 const argv = minimist(process.argv.slice(2));
 
@@ -59,7 +59,7 @@ declare global {
 const start = Date.now();
 (async function () {
     console.log(`Beginning Scrape of [${Object.keys(societyScrapers).length}] societies at [${new Date()}]`);
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({});
     const page = await browser.newPage();
     try {
         const runDir = join(outDir, `${Date.now()}`);
@@ -71,11 +71,11 @@ const start = Date.now();
             const scraperSpinner = ora(`Running scrape of [${scraper.societyName}]`).start();
             const scrapeFile = join(runDir, `${scraper.societyName}.json`);
             console.info(`Scraping [${scraper.societyName}] into [${scrapeFile}]`);
+            const ssw = new StructuredStreamWriter(StructuredFormat.JSON, scrapeFile);
 
             await page.goto(scraper.entryUrl);
 
             const socContexts: SocietyContext[] = await scraper.getSocietiesContext(page);
-            const socData = [];
             let index = -1;
             for (const context of socContexts) {
                 index += 1;
@@ -86,19 +86,12 @@ const start = Date.now();
                     el = await page.$('body') as ElementHandle;
                 }
                 await page.evaluate(utils);
-                socData.push(
+                await ssw.writeItem(
                     postProcessData(scraper, await scraper.getSocietyData(el!)),
                 );
             }
 
-            writeFileSync(
-                scrapeFile,
-                JSON.stringify({
-                    runDate: start,
-                    societies: socData,
-                }, null, '\t')
-                , 'utf8'
-            );
+            ssw.done();
             console.info(`Written [${scraper.societyName}] societies into [${scrapeFile}]`);
             scraperSpinner.succeed();
         }

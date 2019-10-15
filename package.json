@@ -17,6 +17,7 @@
     "mkdirp": "^0.5.1",
     "ora": "^4.0.2",
     "puppeteer": "^1.20.0",
+    "structured-stream-writer": "^1.0.0",
     "ts-node": "^8.4.1",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.6.4"
