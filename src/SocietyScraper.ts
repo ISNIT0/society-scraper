@@ -44,6 +44,15 @@ export abstract class SocietyScraper {
         };
         for (const [key, selector] of Object.entries(this.dataSelectors)) {
             try {
+                if (typeof selector === 'function') {
+                    const val = await selector(element);
+                    if (key === '_spread') {
+                        Object.assign(ret, val);
+                    } else {
+                        ret[key] = val;
+                    }
+                    continue;
+                }
                 const { textContent, href } = await element.$eval(selector!, (el) => {
                     return {
                         textContent: window.extractText(el),
@@ -72,6 +81,6 @@ export abstract class SocietyScraper {
         description?: string,
         email?: string,
         secretaryName?: string,
-        [key: string]: string | undefined,
+        [key: string]: string | ((el: ElementHandle) => Promise<any>) | undefined,
     }
 }
