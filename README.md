@@ -15,4 +15,6 @@ npm start
 ## Merging Changes
 1. `git checkout -b KAI/NEWBRANCHNAME` e.g `git checkout -b KAI/StAndrews`
 2. Commit changes = 
- 
+3. Push changes to Github `git push origin KAI/NEWBRANCHNAME` 
+4. Create pull request on Github and request Joe
+5. `git checkout master` & `git pull origin master`
