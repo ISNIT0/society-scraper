@@ -5,3 +5,4 @@ export * from './StAndrews';
 export * from './LSE';
 export * from './Imperial';
 export * from './Bath';
+export * from './UCL';
