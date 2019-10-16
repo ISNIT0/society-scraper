@@ -105,8 +105,3 @@ const start = Date.now();
 }, (err) => {
     console.error(`Failed Scrape in [${Date.now() - start}ms]`, err);
 });
-
-
-function sleep(ms: number) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-}

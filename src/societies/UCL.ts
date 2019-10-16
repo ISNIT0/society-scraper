@@ -1,16 +1,16 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class SAMPLE extends SocietyScraper {
+export class UCL extends SocietyScraper {
     whitelist = true;
-    societyName = 'SAMPLE';
-    entryUrl = 'https://www.nusu.co.uk/getinvolved/societies/list/';
+    societyName = 'UCL';
+    entryUrl = 'http://studentsunionucl.org/clubs-societies/directory';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.organistion_list > a';
-    // contextPaginate = '.next-page > a';
+    contextSelector = '.clubs';
+    contextPaginate = '.pager-next a';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,8 +20,9 @@ export class SAMPLE extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1.sochead',
-        description: '#description',
-        email: '.msl_email',
+        title: 'banner__title h1',
+        description: '#block-system-main',
+        email: '.link[href^="mailto:"]',
+        website: '.link:not([href^="mailto:"])',
     };
 }

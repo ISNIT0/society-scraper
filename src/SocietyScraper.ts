@@ -1,5 +1,6 @@
 import { Page, ElementHandle } from "puppeteer";
 import { resolve } from "url";
+import { sleep } from "./util";
 
 export type SocietyData = any; // TODO: define properly
 
@@ -9,7 +10,8 @@ export interface SocietyContext {
 }
 
 export abstract class SocietyScraper {
-    abstract whitelist?: boolean;
+    contextPaginate?: string;
+    whitelist?: boolean;
     abstract societyName: string;
     abstract entryUrl: string;
     public async getSocietiesContext(page: Page): Promise<SocietyContext[]> {
@@ -17,7 +19,7 @@ export abstract class SocietyScraper {
             throw new Error(`Neither [getSocietiesContext()] or [contextSelector] have been overridden`);
         }
         const socEls = await page.$$(this.contextSelector);
-        return await Promise.all(
+        const contexts = await Promise.all(
             Array.from(socEls)
                 .map(async (socEl) => {
                     const tagName = await socEl.evaluate((el) => el.tagName);
@@ -32,6 +34,21 @@ export abstract class SocietyScraper {
                     }
                 })
         );
+        const nextPageExists = this.contextPaginate && await page.$(this.contextPaginate);
+        if (this.contextPaginate && nextPageExists) {
+            console.log(`Paginating context querying`);
+            const newHref = await nextPageExists.evaluate((el) => el.getAttribute('href'));
+            if (newHref) {
+                await page.goto(resolve(this.entryUrl, newHref));
+            } else {
+                await page.click(this.contextPaginate);
+                await sleep(1000);
+            }
+            const nextContexts = await this.getSocietiesContext(page);
+            return contexts.concat(nextContexts as any);
+        } else {
+            return contexts;
+        }
     }
     abstract contextSelector?: string;
 
@@ -55,7 +72,7 @@ export abstract class SocietyScraper {
                 }
                 const { textContent, href } = await element.$eval(selector!, (el) => {
                     return {
-                        textContent: window.extractText(el),
+                        textContent: window.extractText(el).trim(),
                         href: el.getAttribute('href'),
                     };
                 });
