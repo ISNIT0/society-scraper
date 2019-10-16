@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Imperial extends SocietyScraper {
+export class UCL extends SocietyScraper {
     whitelist = true;
-    societyName = 'Imperial';
-    entryUrl = 'https://www.imperialcollegeunion.org/activities/a-to-z';
+    societyName = 'UCL';
+    entryUrl = 'http://studentsunionucl.org/clubs-societies/directory';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.view-content a';
+    contextSelector = '.search-index__results .clubs'; //there are multiple pages, not sure how to select next page in the cod
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -19,11 +19,8 @@ export class Imperial extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: '.csp',
-        website: '.icon-bar.csp-contact> a:nth-child(1)', //these need work, was tkaing too long to fix as they all have same class names
-        email: '.icon-bar.csp-contact> a:nth-child(2)', 
-        facebook: '.icon-bar.csp-contact> a:nth-child(3)',
-        twitter: '.icon-bar.csp-contact> a:nth-child(4)', 
+        title: '.banner__title--background',
+        description: '.field.field-name-body.field-type-text-with-summary.field-label-hidden>.field-items',
+        email: '.msl_email', // I cant get links to work
     };
 }
