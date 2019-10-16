@@ -20,7 +20,7 @@ export class bath extends SocietyScraper {
     */
     dataSelectors = {
         title: '.page-title',
-        description: '#side-content>h2 +p', //This is wrong but the closest I could get
+        description: '#grp-descrip~p',
         email: '#desktop-side-links .msl_email',
         facebook: '#desktop-side-links .msl_facebook',
         instagram: '#desktop-side-links .msl_instagram',

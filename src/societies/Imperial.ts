@@ -21,9 +21,9 @@ export class Imperial extends SocietyScraper {
     dataSelectors = {
         title: 'h1',
         description: '.csp',
-        website: '.icon-bar.csp-contact> a:nth-child(1)', //these need work, was tkaing too long to fix as they all have same class names
-        email: '.icon-bar.csp-contact> a:nth-child(2)', 
-        facebook: '.icon-bar.csp-contact> a:nth-child(3)',
-        twitter: '.icon-bar.csp-contact> a:nth-child(4)', 
+        website: '.csp-contact a[href^="http://www.union"]', 
+        email: '.csp-contact a[href^="mailto"]', 
+        facebook: '.csp-contact a[href^="https://www.facebook"]',
+        twitter: '.csp-contact a[href^="https://twitter"]', 
     };
 }
