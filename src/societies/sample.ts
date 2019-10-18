@@ -10,6 +10,7 @@ export class SAMPLE extends SocietyScraper {
     Otherwise, it should select the highest level element that contains just the society
     */
     contextSelector = '.organistion_list > a';
+    // contextPaginate = '.next-page > a';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
