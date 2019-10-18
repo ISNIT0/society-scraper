@@ -93,7 +93,7 @@ export abstract class SocietyScraper {
         return ret;
     };
     abstract dataSelectors?: {
-        title: string,
+        title: string | ((el: ElementHandle) => Promise<any>),
         url?: string,
         description?: string,
         email?: string,

@@ -18,3 +18,4 @@ npm start
 3. Push changes to Github `git push origin KAI/NEWBRANCHNAME` 
 4. Create pull request on Github and request Joe
 5. `git checkout master` & `git pull origin master`
+6. if not accepted, `git checkout KAI/BRANCHJUSTSUBMITTED`
