@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Imperial extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     societyName = 'Imperial';
     entryUrl = 'https://www.imperialcollegeunion.org/activities/a-to-z';
 

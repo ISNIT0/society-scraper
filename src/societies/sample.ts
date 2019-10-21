@@ -9,7 +9,7 @@ export class SAMPLE extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.organistion_list > a';
+    contextSelector = 'ul.msl_organisation_list > li > a';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -23,5 +23,9 @@ export class SAMPLE extends SocietyScraper {
         title: 'h1.sochead',
         description: '#description',
         email: '.msl_email',
+        facebook: '.msl_facebook',
+        instagram: '.msl_instagram',
+        twitter: '.msl_twitter',
+        website: '.msl_web',
     };
 }

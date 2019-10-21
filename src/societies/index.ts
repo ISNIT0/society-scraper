@@ -6,3 +6,7 @@ export * from './LSE';
 export * from './Imperial';
 export * from './Bath';
 export * from './UCL';
+export * from './Warwick';
+export * from './Birmingham';
+export * from './Edinburgh';
+export * from './Nottingham';
