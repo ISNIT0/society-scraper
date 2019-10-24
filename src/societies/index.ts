@@ -13,3 +13,10 @@ export * from './Nottingham';
 export * from './UEA';
 export * from './Newcastle';
 export * from './RH';
+export * from './Surrey';
+export * from './KCL';
+export * from './Cardiff';
+export * from './Liverpool';
+export * from './Aberdeen';
+export * from './York';
+
