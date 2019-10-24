@@ -19,4 +19,8 @@ export * from './Cardiff';
 export * from './Liverpool';
 export * from './Aberdeen';
 export * from './York';
-
+export * from './Dundee';
+export * from './Sussex';
+export * from './Sheffield';
+export * from './Aston';
+export * from './Swansea';
