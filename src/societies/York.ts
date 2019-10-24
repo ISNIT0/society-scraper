@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class RH extends SocietyScraper {
+export class York extends SocietyScraper {
     whitelist = false;
-    societyName = 'RH';
-    entryUrl = 'https://www.su.rhul.ac.uk/societies/a-z/#';
+    societyName = 'York';
+    entryUrl = 'https://yusu.org/student-life/clubs-and-socs#societies-a-z';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list a:nth-of-type(even)';
+    contextSelector = 'div.activity-article.g-mb-30> a';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -21,11 +21,11 @@ export class RH extends SocietyScraper {
     */
     dataSelectors = {
         title: 'h1',
-        description: 'h2:nth-child(1) +p',
-        email: 'dd.msl-email-address',
-        facebook: '.msl_facebook', // there but cant select
-        instagram: '.msl_instagram', // there but cant select
-        twitter: '.msl_twitter', // there but cant select
-        website: '.msl_web', // there but cant select
+        description: '.col-lg-8 p:nth-child(3)',
+        email: '.media-body a[href^="mailto:"]',
+        facebook: '.media-body a[href^="https://facebook"]',
+        instagram: '.msl_instagram',
+        twitter: '.media-body a[href^="https://twitter"]',
+        website: '.msl_web',
     };
 }

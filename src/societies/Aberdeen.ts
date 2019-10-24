@@ -1,9 +1,9 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class RH extends SocietyScraper {
+export class Aberdeen extends SocietyScraper {
     whitelist = false;
-    societyName = 'RH';
-    entryUrl = 'https://www.su.rhul.ac.uk/societies/a-z/#';
+    societyName = 'Aberdeen';
+    entryUrl = 'https://www.ausa.org.uk/societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
@@ -21,11 +21,11 @@ export class RH extends SocietyScraper {
     */
     dataSelectors = {
         title: 'h1',
-        description: 'h2:nth-child(1) +p',
-        email: 'dd.msl-email-address',
-        facebook: '.msl_facebook', // there but cant select
-        instagram: '.msl_instagram', // there but cant select
-        twitter: '.msl_twitter', // there but cant select
-        website: '.msl_web', // there but cant select
+        description: '#org-description>p:first-of-type',
+        email: '.msl_email',
+        facebook: '.msl_facebook',
+        instagram: '.msl_instagram',
+        twitter: '.msl_twitter',
+        website: '.msl_web',
     };
 }

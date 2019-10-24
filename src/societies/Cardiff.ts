@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class RH extends SocietyScraper {
-    whitelist = false;
-    societyName = 'RH';
-    entryUrl = 'https://www.su.rhul.ac.uk/societies/a-z/#';
+export class Cardiff extends SocietyScraper {
+    whitelist = true;
+    societyName = 'Cardiff';
+    entryUrl = 'https://www.cardiffstudents.com/activities/societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list a:nth-of-type(even)';
+    contextSelector = '#full-list .msl-gl-link';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -21,11 +21,12 @@ export class RH extends SocietyScraper {
     */
     dataSelectors = {
         title: 'h1',
-        description: 'h2:nth-child(1) +p',
-        email: 'dd.msl-email-address',
-        facebook: '.msl_facebook', // there but cant select
-        instagram: '.msl_instagram', // there but cant select
-        twitter: '.msl_twitter', // there but cant select
-        website: '.msl_web', // there but cant select
+        description: '#organisation :nth-child(2).mslwidget',
+        email: '.msl_email',
+        facebook: '#soc-social>a[href^="https://www.facebook"]',
+        instagram: '#soc-social>a[href^="https://www.instagram"]',
+        twitter: '#soc-social>a[href^="https://twitter"]',
+        website: 'div.website.threed.new',
+        discord: 'a[href^="https://discord"]'
     };
 }
