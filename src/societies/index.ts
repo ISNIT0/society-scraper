@@ -1,3 +1,5 @@
+import { Leicester } from './Leicester';
+
 export * from './CUSU';
 export * from './OX';
 export * from './NUSU';
@@ -25,3 +27,13 @@ export * from './Sheffield';
 export * from './Aston';
 export * from './Swansea';
 export * from './HW';
+export * from './QueensBelfast';
+export * from './NottinghamTrent';
+export * from './Strathclyde';
+export * from './Reading';
+export * from './QM';
+export * from './Lincoln';
+export * from './Stirling';
+export * from './Essex';
+export * from './SOAS';
+export * from './Leicester';
