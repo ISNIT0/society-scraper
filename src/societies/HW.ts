@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Swansea extends SocietyScraper {
+export class HW extends SocietyScraper {
     whitelist = false;
-    societyName = 'Swansea';
-    entryUrl = 'https://www.swansea-union.co.uk/activities/societies/';
+    societyName = 'HW';
+    entryUrl = 'https://www.hwunion.com/get-involved/societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list a:nth-of-type(even)';
+    contextSelector = 'ul.msl_organisation_list a:nth-child(even)';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -21,11 +21,11 @@ export class Swansea extends SocietyScraper {
     */
     dataSelectors = {
         title: 'h1',
-        description: 'div.org-box.org-description',
-        email: 'a.msl_email',
-        facebook: 'a.msl_facebook',
+        description: 'div.desc-c>:nth-child(2)',
+        email: '.msl_email',
+        facebook: '.msl_facebook',
         instagram: '.msl_instagram',
         twitter: '.msl_twitter',
-        website: '.msl_web',
+        website: 'a.website',
     };
 }

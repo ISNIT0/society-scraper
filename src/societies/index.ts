@@ -24,3 +24,4 @@ export * from './Sussex';
 export * from './Sheffield';
 export * from './Aston';
 export * from './Swansea';
+export * from './HW';
