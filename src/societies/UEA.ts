@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class UEA extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     societyName = 'UEA';
     entryUrl = 'https://www.uea.su/opportunities/societies/';
 

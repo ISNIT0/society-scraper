@@ -78,17 +78,22 @@ const start = Date.now();
             const socContexts: SocietyContext[] = await scraper.getSocietiesContext(page);
             let index = -1;
             for (const context of socContexts) {
-                index += 1;
-                let el = context.el;
-                if (context.url) {
-                    console.info(`Navigating to [${context.url}] [${index}/${socContexts.length}]`);
-                    await page.goto(context.url);
-                    el = await page.$('body') as ElementHandle;
+                try {
+                    index += 1;
+                    let el = context.el;
+                    if (context.url) {
+                        scraperSpinner.info(`[${index}/${socContexts.length}] Navigating to [${context.url}]`);
+                        // console.info(`Navigating to [${context.url}] [${index}/${socContexts.length}]`);
+                        await page.goto(context.url);
+                        el = await page.$('body') as ElementHandle;
+                    }
+                    await page.evaluate(utils);
+                    await ssw.writeItem(
+                        postProcessData(scraper, await scraper.getSocietyData(el!)),
+                    );
+                } catch (err) {
+                    console.warn(`Error on page:`, err);
                 }
-                await page.evaluate(utils);
-                await ssw.writeItem(
-                    postProcessData(scraper, await scraper.getSocietyData(el!)),
-                );
             }
 
             ssw.done();
