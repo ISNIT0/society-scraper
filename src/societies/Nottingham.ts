@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Nottingham extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     societyName = 'Nottingham';
     entryUrl = 'https://www.su.nottingham.ac.uk/find-a-group/';
 

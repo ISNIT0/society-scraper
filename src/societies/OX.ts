@@ -9,6 +9,6 @@ export class OX extends SocietyScraper {
         title: 'td',
         url: 'td a',
         secretaryName: 'td:nth-child(2)',
-        secretaryEmail: 'td:nth-child(2) a',
+        email: 'td:nth-child(2) a',
     }
 }

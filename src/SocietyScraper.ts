@@ -1,6 +1,6 @@
 import { Page, ElementHandle } from "puppeteer";
 import { resolve } from "url";
-import { sleep } from "./util";
+import { sleep, getTags } from "./util";
 
 export type SocietyData = any; // TODO: define properly
 
@@ -89,6 +89,9 @@ export abstract class SocietyScraper {
             } catch (err) {
                 // console.warn(`Failed to get [${selector}]`, err);
             }
+        }
+        if (ret.description) {
+            ret.tags = getTags(ret.description);
         }
         return ret;
     };
