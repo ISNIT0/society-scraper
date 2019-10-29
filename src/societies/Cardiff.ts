@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Cardiff extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     societyName = 'Cardiff';
     entryUrl = 'https://www.cardiffstudents.com/activities/societies/';
 
