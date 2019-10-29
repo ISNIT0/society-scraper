@@ -1,4 +1,3 @@
-import { Leicester } from './Leicester';
 
 export * from './CUSU';
 export * from './OX';
@@ -37,3 +36,7 @@ export * from './Stirling';
 export * from './Essex';
 export * from './SOAS';
 export * from './Leicester';
+export * from './SG';
+export * from './Kent';
+export * from './Northumbria';
+export * from './OB';
