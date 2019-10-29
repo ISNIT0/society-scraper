@@ -10,3 +10,4 @@ export * from './Warwick';
 export * from './Birmingham';
 export * from './Edinburgh';
 export * from './Nottingham';
+export * from './Newcastle';
