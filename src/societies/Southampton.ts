@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Southampton extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     societyName = 'Southampton';
     entryUrl = 'https://www.susu.org/opportunities/societies';
 
