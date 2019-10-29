@@ -40,3 +40,7 @@ export * from './SG';
 export * from './Kent';
 export * from './Northumbria';
 export * from './OB';
+export * from './Keele';
+export * from './Coventry';
+export * from './Manchester';
+export * from './Portsmouth';
