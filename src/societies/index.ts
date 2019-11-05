@@ -46,7 +46,7 @@ export * from './Coventry';
 export * from './Manchester';
 export * from './Portsmouth';
 export * from './Bristol';
-export * from './City UOL';
+export * from './CityUOL';
 export * from './ManchesterMet';
 export * from './Ulster';
 export * from './Staffordshire';
