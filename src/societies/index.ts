@@ -49,3 +49,8 @@ export * from './Bristol';
 export * from './City UOL';
 export * from './ManchesterMet';
 export * from './Ulster';
+export * from './Staffordshire';
+export * from './Bradford';
+export * from './EdgeHill';
+export * from './LiverpoolHope';
+export * from './Buckinghamshire';

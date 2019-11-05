@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Ulster extends SocietyScraper {
+export class Staffordshire extends SocietyScraper {
     whitelist = false;
-    societyName = 'Ulster';
-    entryUrl = 'https://www.uusu.org/get_involved/societies/';
+    societyName = 'Staffordshire';
+    entryUrl = 'https://www.staffsunion.com/getinvolved/clubsandsocieties/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.msl_organisation_list a:nth-of-type(even)';
+    contextSelector = '#filterlist a:nth-of-type(even)';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -20,8 +20,8 @@ export class Ulster extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: '#organisation',
+        title: '.banner-details h1',
+        description: '.mslwidget h1',
         email: '.msl_email',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',

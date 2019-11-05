@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Ulster extends SocietyScraper {
-    whitelist = false;
-    societyName = 'Ulster';
-    entryUrl = 'https://www.uusu.org/get_involved/societies/';
+export class Buckinghamshire extends SocietyScraper {
+    whitelist = true;
+    societyName = 'Buckinghamshire';
+    entryUrl = 'https://www.bucksstudentsunion.org/activities/socs/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.msl_organisation_list a:nth-of-type(even)';
+    contextSelector = '.msl_organisation_list .msl-gl-link';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -21,11 +21,11 @@ export class Ulster extends SocietyScraper {
     */
     dataSelectors = {
         title: 'h1',
-        description: '#organisation',
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
+        description: '.mslwidget p',
+        email: 'a[href^="mailto:"]',
+        facebook: 'a[href^="https://www.facebook"]',
+        instagram: 'a[href^="https://www.instagram"]',
+        twitter: 'a[href^="https://twitter"]',
         website: '.msl_web',
     };
 }

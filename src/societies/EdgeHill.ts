@@ -1,16 +1,16 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Ulster extends SocietyScraper {
+export class EdgeHill extends SocietyScraper {
     whitelist = false;
-    societyName = 'Ulster';
-    entryUrl = 'https://www.uusu.org/get_involved/societies/';
+    societyName = 'EdgeHill';
+    entryUrl = 'https://www.edgehillsu.org.uk/groups';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.msl_organisation_list a:nth-of-type(even)';
-    // contextPaginate = '.next-page > a';
+    contextSelector = '.uc-group-list-page-wrapper a';
+    contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,8 +20,8 @@ export class Ulster extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: '#organisation',
+        title: '.title h1', 
+        description: '#organisation', //hard slectors
         email: '.msl_email',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',
