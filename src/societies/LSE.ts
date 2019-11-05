@@ -27,5 +27,9 @@ export class LSE extends SocietyScraper {
         },
         description: '.col-md-8>:nth-child(3)',
         email: '.msl_email',
+        facebook: '.msl_facebook',
+        twitter: 'msl_twitter',
+        website: 'msl_web',
+        instagram: 'msl_instagram',
     };
 }

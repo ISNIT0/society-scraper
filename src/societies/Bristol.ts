@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class NottinghamTrent extends SocietyScraper {
+export class Bristol extends SocietyScraper {
     whitelist = false;
-    societyName = 'NottinghamTrent';
-    entryUrl = 'https://www.trentstudents.org/groups?group_type=societies-1013&group_cat=&search=';
+    societyName = 'Bristol';
+    entryUrl = 'https://www.bristolsu.org.uk/groups';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'div.ninecol.group-list.last a';
+    contextSelector = 'ul.msl_organisation_list > li > a';
     contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -20,12 +20,12 @@ export class NottinghamTrent extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'div.title',
-        description: 'div.contentBoxes>p:nth-of-type(3)',
-        email: 'div.contentBoxes a[href^="mailto:"]',
-        facebook: 'div.contentBoxes a[href^="https://www.facebook"]',
-        instagram: 'div.contentBoxes a[href^="https://www.instagram"]',
-        twitter: 'div.contentBoxes a[href^="https://twitter"]',
+        title: '.title h1',
+        description: 'div.contentBoxes p:nth-child(5)',
+        email: '.group-cms-wrapper a[href^="mailto:"',
+        facebook: '.group-cms-wrapper a[href^="https://www.facebook"',
+        instagram: '.group-cms-wrapper a[href^="https://www.instagram"',
+        twitter: '.group-cms-wrapper a[href^="https://www.twitter"',
         website: '.msl_web',
     };
 }
