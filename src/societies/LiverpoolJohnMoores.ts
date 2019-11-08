@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Bradford extends SocietyScraper {
+export class LiverpoolJohnMoores extends SocietyScraper {
     whitelist = false;
-    societyName = 'Bradford';
-    entryUrl = 'https://www.bradfordunisu.co.uk/groups?group_type=activities&group_cat=&search=';
+    societyName = 'LiverpoolJohnMoores';
+    entryUrl = 'https://www.jmsu.co.uk/groups';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.uc-group-list-page-wrapper a';
+    contextSelector = '.group-box';
     contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
@@ -21,11 +21,11 @@ export class Bradford extends SocietyScraper {
     */
     dataSelectors = {
         title: '.title h1',
-        description: '.contentBoxes ul:nth-of-type(1), .contentBoxes ul:nth-of-type(2)',
-        email: 'a[href^="mailto:"]',
-        facebook: 'a[href^="https://www.facebook"]',
-        instagram: 'a[href^="https://www.instagram"]',
-        twitter: 'a[href^="https://twitter"]',
-        website: '.msl_web',
+        description: 'td p',
+        email: 'a[href^="mailto:"',
+        facebook: '.msl_facebook', //not href
+        instagram: '.msl_instagram', // not a href
+        twitter: '.msl_twitter', // not a href
+        website: '.msl_web', // not a href
     };
 }

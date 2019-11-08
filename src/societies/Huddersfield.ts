@@ -1,9 +1,9 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Bradford extends SocietyScraper {
+export class Huddersfield extends SocietyScraper {
     whitelist = false;
-    societyName = 'Bradford';
-    entryUrl = 'https://www.bradfordunisu.co.uk/groups?group_type=activities&group_cat=&search=';
+    societyName = 'Huddersfield';
+    entryUrl = 'https://www.huddersfield.su/groups?group_type=&group_cat=&search=';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
@@ -12,7 +12,7 @@ export class Bradford extends SocietyScraper {
     contextSelector = '.uc-group-list-page-wrapper a';
     contextPaginate = '.uc-load-more-groups';
 
-    /* dataSelectors
+    /* dataSelectorsl
     The dataSelectors will be run once for each context that was selected above.
     If the context was an <a>, the dataSelector will be run in the new webpage.
     If the context was a container, the dataSelector will be run only within that element.

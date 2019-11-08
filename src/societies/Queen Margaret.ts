@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Bradford extends SocietyScraper {
+export class Queenmargaret extends SocietyScraper {
     whitelist = false;
-    societyName = 'Bradford';
-    entryUrl = 'https://www.bradfordunisu.co.uk/groups?group_type=activities&group_cat=&search=';
+    societyName = 'Queenmargaret';
+    entryUrl = 'https://www.qmusu.org.uk/groups';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.uc-group-list-page-wrapper a';
+    contextSelector = '.categoryBox.all-groups a:not(.uc-load-more-groups';
     contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
@@ -21,7 +21,7 @@ export class Bradford extends SocietyScraper {
     */
     dataSelectors = {
         title: '.title h1',
-        description: '.contentBoxes ul:nth-of-type(1), .contentBoxes ul:nth-of-type(2)',
+        description: '.contentBoxes p',
         email: 'a[href^="mailto:"]',
         facebook: 'a[href^="https://www.facebook"]',
         instagram: 'a[href^="https://www.instagram"]',
