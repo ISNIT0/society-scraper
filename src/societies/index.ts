@@ -1,4 +1,6 @@
 import { format } from 'util';
+import { Bradford } from './Bradford';
+import { Ulster } from './Ulster';
 
 export * from './CUSU';
 export * from './OX';
@@ -54,3 +56,12 @@ export * from './Bradford';
 export * from './EdgeHill';
 export * from './LiverpoolHope';
 export * from './Buckinghamshire';
+export * from './Bradford';
+export * from './Coventry';
+export * from './EdgeHill';
+export * from './Keele';
+export * from './LiverpoolHope';
+export * from './Portsmouth';
+export * from './Staffordshire';
+export * from './UAL';
+export * from './Ulster';
