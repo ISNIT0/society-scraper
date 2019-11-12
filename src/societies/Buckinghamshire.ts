@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Buckinghamshire extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     societyName = 'Buckinghamshire';
     entryUrl = 'https://www.bucksstudentsunion.org/activities/socs/';
 
