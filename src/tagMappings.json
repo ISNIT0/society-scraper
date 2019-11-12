@@ -6,6 +6,27 @@
         "concert",
         "music"
     ],
+    "arts": [
+        "arts",
+        "music",
+        "art",
+        "concerts",
+        "theatre",
+        "dance",
+        "drama",
+        "musical",
+        "performance",
+        "presentation",
+        "workshops",
+        "aspects",
+        "choral",
+        "performances",
+        "festival",
+        "performing",
+        "singing",
+        "creative",
+        "band"
+    ],
     "environment": [
         "environment",
         "green",
