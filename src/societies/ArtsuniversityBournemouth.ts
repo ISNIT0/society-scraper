@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class RH extends SocietyScraper {
+export class ArtsuniversityBournemouth extends SocietyScraper {
     whitelist = false;
-    societyName = 'RH';
-    entryUrl = 'https://www.su.rhul.ac.uk/societies/a-z/#';
+    societyName = 'Arts university Bournemouth';
+    entryUrl = 'https://www.aubsu.co.uk/activities/clubs_societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list a:nth-of-type(even)';
+    contextSelector = '.msl_organisation_list a:nth-of-type(even)';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -20,12 +20,12 @@ export class RH extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: 'h2:nth-child(1) +p',
-        email: 'dd.msl-email-address',
-        facebook: '.msl_facebook', // there but cant select
-        instagram: '.msl_instagram', // there but cant select
-        twitter: '.msl_twitter', // there but cant select
-        website: '.msl_web', // there but cant select
+        title: 'h2',
+        description: '.col-md-8 .mslwidget',
+        email: '.msl_email',
+        facebook: '.msl_facebook',
+        instagram: '.msl_instagram',
+        twitter: '.msl_twitter',
+        website: '.msl_web',
     };
 }

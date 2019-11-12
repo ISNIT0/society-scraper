@@ -20,7 +20,7 @@ export class Strathclyde extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'div.title',
+        title: 'div.title-c h1',
         description: 'div.contentBoxes>p:nth-of-type(3)',
         email: 'div.mslwidget a.msl_email',
         facebook: 'a.msl_facebook',

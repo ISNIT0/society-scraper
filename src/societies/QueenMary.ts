@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class UAL extends SocietyScraper {
+export class QueenMary extends SocietyScraper {
     whitelist = false;
-    societyName = 'UAL';
-    entryUrl = 'https://www.arts-su.com/societies';
+    societyName = 'QueenMary';
+    entryUrl = 'https://www.qmsu.org/societies/findme/all/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.club-list a';
+    contextSelector = 'div.col-md-8 .mslwidget>.msl_organisation_list>ul a';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -20,8 +20,8 @@ export class UAL extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: '.title h1',
-        description: '#description',
+        title: '.area.intro h1:not(.mslwidget)',
+        description: 'div.area>.mslwidget>p',
         email: '.msl_email',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',

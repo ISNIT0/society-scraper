@@ -1,16 +1,16 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Dundee extends SocietyScraper {
+export class Queenmargaret extends SocietyScraper {
     whitelist = false;
-    societyName = 'Dundee';
-    entryUrl = 'https://www.dusa.co.uk/get-involved/societies/a-z/';
+    societyName = 'Queenmargaret';
+    entryUrl = 'https://www.qmusu.org.uk/groups';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'div.et_pb_portfolio_items_wrapper.clearfix h2 a ';
-    // contextPaginate = '.next-page > a';
+    contextSelector = '.categoryBox.all-groups a:not(.uc-load-more-groups';
+    contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,12 +20,12 @@ export class Dundee extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: 'div.et_pb_text_inner',
-        email: '.et_pb_button_wrapper a[href^="mailto"]',
-        facebook: 'h4.et_pb_module_header a[href^="https://www.facebook"]',
-        instagram: 'h4 a[href^="https://www.instagram"]',
-        twitter: 'h4 a[href^="https://twitter"]',
+        title: '.title h1',
+        description: '.contentBoxes p',
+        email: 'a[href^="mailto:"]',
+        facebook: 'a[href^="https://www.facebook"]',
+        instagram: 'a[href^="https://www.instagram"]',
+        twitter: 'a[href^="https://twitter"]',
         website: '.msl_web',
     };
 }

@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class HW extends SocietyScraper {
+export class OxfordBrookes extends SocietyScraper {
     whitelist = false;
-    societyName = 'HW';
-    entryUrl = 'https://www.hwunion.com/get-involved/societies/';
+    societyName = 'OxfordBrookes';
+    entryUrl = 'https://www.brookesunion.org.uk/groups';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list a:nth-child(even)';
+    contextSelector = 'div.category-box-wrapper a';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -20,12 +20,12 @@ export class HW extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: 'div.desc-c>:nth-child(2)',
-        email: '.msl_email',
+        title: '.title h1',
+        description: 'div.contentBoxes>p:nth-of-type(3)',
+        email: 'div.contentBoxes a[href^="mailto"]',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',
         twitter: '.msl_twitter',
-        website: 'a.website',
+        website: '.msl_web',
     };
 }

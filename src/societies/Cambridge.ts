@@ -1,9 +1,9 @@
 import { SocietyScraper } from "src/SocietyScraper";
 import { ElementHandle } from "puppeteer";
 
-export class CUSU extends SocietyScraper {
+export class Cambridge extends SocietyScraper {
     whitelist = false;
-    societyName = 'CUSU';
+    societyName = 'Cambridge';
     entryUrl = 'https://www.cusu.co.uk/societies/directory/';
     contextSelector = '.listsocieties > li > a';
     dataSelectors = {

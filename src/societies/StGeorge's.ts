@@ -1,16 +1,16 @@
 import { SocietyScraper } from "src/SocietyScraper";
-import { ElementHandle } from "puppeteer";
 
-export class LSE extends SocietyScraper {
+export class StGeorge extends SocietyScraper {
     whitelist = false;
-    societyName = 'LSE';
-    entryUrl = 'https://www.lsesu.com/join-in/societies/';
+    societyName = 'StGeorge\'s';
+    entryUrl = 'https://www.sgsu.org.uk/club-soc/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.msl_organisation_list>li>a';
+    contextSelector = 'ul.msl_organisation_list a:nth-of-type(odd)';
+    // contextPaginate = '.next-page > a';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,16 +20,12 @@ export class LSE extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title(elHandle:ElementHandle) {
-            return elHandle.evaluate(() => {
-                return document.title;
-            });
-        },
-        description: '.col-md-8>:nth-child(3)',
-        email: '.msl_email',
+        title: '#title-section h1',
+        description: 'div.desc-c>.mslwidget>p:first-of-type',
+        email: 'a.msl_email',
         facebook: '.msl_facebook',
-        twitter: 'msl_twitter',
-        website: 'msl_web',
-        instagram: 'msl_instagram',
+        instagram: '.msl_instagram',
+        twitter: '.msl_twitter',
+        website: '.msl_web',
     };
 }

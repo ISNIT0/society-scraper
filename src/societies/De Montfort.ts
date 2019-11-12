@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Dundee extends SocietyScraper {
+export class Demontfort extends SocietyScraper {
     whitelist = false;
-    societyName = 'Dundee';
-    entryUrl = 'https://www.dusa.co.uk/get-involved/societies/a-z/';
+    societyName = 'Demontfort';
+    entryUrl = 'https://www.demontfortsu.com/activities/societies/browse-societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'div.et_pb_portfolio_items_wrapper.clearfix h2 a ';
+    contextSelector = '.msl_organisation_list a:nth-of-type(even)';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -21,11 +21,11 @@ export class Dundee extends SocietyScraper {
     */
     dataSelectors = {
         title: 'h1',
-        description: 'div.et_pb_text_inner',
-        email: '.et_pb_button_wrapper a[href^="mailto"]',
-        facebook: 'h4.et_pb_module_header a[href^="https://www.facebook"]',
-        instagram: 'h4 a[href^="https://www.instagram"]',
-        twitter: 'h4 a[href^="https://twitter"]',
-        website: '.msl_web',
+        description: '.panel-body p',
+        email: '.msl-email-address',
+        facebook: '.facebook',
+        instagram: '.instagram',
+        twitter: '.twitter',
+        website: '.web',
     };
 }
