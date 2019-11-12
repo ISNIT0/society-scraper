@@ -1,16 +1,16 @@
 import { SocietyScraper } from "src/SocietyScraper";
 import { ElementHandle } from "puppeteer";
 
-export class LSE extends SocietyScraper {
+export class LondonSchoolofEconomics extends SocietyScraper {
     whitelist = false;
-    societyName = 'LSE';
+    societyName = 'LondonSchoolofEconomics';
     entryUrl = 'https://www.lsesu.com/join-in/societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.msl_organisation_list>li>a';
+    contextSelector = '.tab-pane.active .societylist > div ul.msl_organisation_list>li>a';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.

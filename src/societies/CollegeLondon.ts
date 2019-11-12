@@ -1,16 +1,16 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class HW extends SocietyScraper {
+export class CollegeLondon extends SocietyScraper {
     whitelist = false;
-    societyName = 'HW';
-    entryUrl = 'https://www.hwunion.com/get-involved/societies/';
+    societyName = 'CollegeLondon';
+    entryUrl = 'http://studentsunionucl.org/clubs-societies/directory';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list a:nth-child(even)';
-    // contextPaginate = '.next-page > a';
+    contextSelector = '.clubs';
+    contextPaginate = '.pager-next a';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,12 +20,11 @@ export class HW extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: 'div.desc-c>:nth-child(2)',
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
-        website: 'a.website',
+        title: 'h1.banner__title.h1',
+        description: '#block-system-main',
+        email: '.link[href^="mailto:"]',
+        website: '.link:not([href^="mailto:"])',
+        facebook: 'div.banner__social a[href^="http://www.facebook',
+        twitter: 'div.banner__social a[href^="http://twitter',
     };
 }

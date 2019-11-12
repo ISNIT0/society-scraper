@@ -1,8 +1,8 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class UEA extends SocietyScraper {
+export class EastAnglia extends SocietyScraper {
     whitelist = false;
-    societyName = 'UEA';
+    societyName = 'EastAnglia';
     entryUrl = 'https://www.uea.su/opportunities/societies/';
 
     /* contextSelector
