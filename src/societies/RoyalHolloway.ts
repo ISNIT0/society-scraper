@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class QM extends SocietyScraper {
+export class RoyalHolloway extends SocietyScraper {
     whitelist = false;
-    societyName = 'QM';
-    entryUrl = 'https://www.qmsu.org/societies/findme/all/';
+    societyName = 'RoyalHolloway';
+    entryUrl = 'https://www.su.rhul.ac.uk/societies/a-z/#';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'div.col-md-8 .mslwidget>.msl_organisation_list>ul a';
+    contextSelector = 'ul.msl_organisation_list a:nth-of-type(even)';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -20,12 +20,12 @@ export class QM extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: '.area.intro h1',
-        description: 'div.area>.mslwidget>p',
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
-        website: '.msl_web',
+        title: 'h1',
+        description: 'h2:nth-child(1) +p',
+        email: 'dd.msl-email-address',
+        facebook: '.msl_facebook', // there but cant select
+        instagram: '.msl_instagram', // there but cant select
+        twitter: '.msl_twitter', // there but cant select
+        website: '.msl_web', // there but cant select
     };
 }

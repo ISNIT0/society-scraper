@@ -1,9 +1,11 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class OX extends SocietyScraper {
+export class Oxford extends SocietyScraper {
     whitelist = false;
-    societyName = 'OX';
+    societyName = 'Oxford';
     entryUrl = 'https://www.ox.ac.uk/students/life/clubs/list?wssl=1';
+
+    
     contextSelector = '.more-less > table tr:not(:first-child)';
     dataSelectors = {
         title: 'td',

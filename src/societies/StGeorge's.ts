@@ -1,8 +1,8 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class SG extends SocietyScraper {
+export class StGeorge extends SocietyScraper {
     whitelist = false;
-    societyName = 'SG';
+    societyName = 'StGeorge\'s';
     entryUrl = 'https://www.sgsu.org.uk/club-soc/';
 
     /* contextSelector

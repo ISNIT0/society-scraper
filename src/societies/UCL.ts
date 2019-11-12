@@ -20,9 +20,11 @@ export class UCL extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'banner__title h1',
+        title: 'h1.banner__title.h1',
         description: '#block-system-main',
         email: '.link[href^="mailto:"]',
         website: '.link:not([href^="mailto:"])',
+        facebook: 'div.banner__social a[href^="http://www.facebook',
+        twitter: 'div.banner__social a[href^="http://twitter',
     };
 }

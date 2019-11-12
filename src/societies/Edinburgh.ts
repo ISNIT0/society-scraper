@@ -9,7 +9,7 @@ export class Edinburgh extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list > li > a.msl-gl-link';
+    contextSelector = 'ul.msl_organisation_list:nth-child(1) > li > a.msl-gl-link';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors

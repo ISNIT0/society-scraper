@@ -9,7 +9,7 @@ export class Dundee extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'div.et_pb_portfolio_items_wrapper.clearfix a:nth-of-type(odd)';
+    contextSelector = 'div.et_pb_portfolio_items_wrapper.clearfix h2 a ';
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
