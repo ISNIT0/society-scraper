@@ -5,7 +5,7 @@ export class Cambridge extends SocietyScraper {
     whitelist = false;
     societyName = 'Cambridge';
     entryUrl = 'https://www.cusu.co.uk/societies/directory/';
-    contextSelector = '#listinggrid > div > a';
+    contextSelector = '.listsocieties > li > a';
     dataSelectors = {
         title: 'h2',
         async _spread(elHandle: ElementHandle) {

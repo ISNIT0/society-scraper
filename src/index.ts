@@ -1,9 +1,9 @@
 import minimist from 'minimist';
 import * as societyScrapers from './societies';
 import ora from 'ora';
-import puppeteer, { ElementHandle } from 'puppeteer';
+import puppeteer, { ElementHandle, Browser, Page } from 'puppeteer';
 import { SocietyContext, SocietyScraper } from './SocietyScraper';
-import { postProcessData } from './util';
+import { postProcessData, sleep } from './util';
 import { join } from 'path';
 import mkdirp = require('mkdirp');
 import { StructuredStreamWriter, StructuredFormat } from 'structured-stream-writer';
@@ -14,6 +14,8 @@ const outDir = join(process.cwd(), argv.outDir || `./out`);
 if (!argv.outDir) {
     console.info(`[--outDir] not set, defaulting to [${outDir}]`);
 }
+const parallel = argv.parallel || 4;
+console.info(`Using [--parallel=${parallel}]`);
 
 const utils = () => {
     window.preProcessVal = function preProcessVal(str) {
@@ -56,52 +58,106 @@ declare global {
     }
 }
 
+class ParallelBrowser {
+    private browser!: Browser;
+    private pages: Page[] = [];
+    private parallel: number = 1;
+    private claimRequest: Promise<Page> = Promise.resolve(null) as any;
+
+    constructor(parallel: number) {
+        this.parallel = Math.abs(Math.max(1, parallel));
+    }
+
+    public async init() {
+        this.browser = await puppeteer.launch({ headless: false, defaultViewport: null });
+
+        for (let i = 0; i < this.parallel; i++) {
+            const page = await this.browser.newPage();
+            (page as any).currentRequest = Promise.resolve();
+            this.pages.push(page);
+        }
+    }
+
+    public async claimPage(): Promise<Page> {
+        const claimRequest = this.claimRequest.then(() => {
+            return new Promise<Page>(async (resolve) => {
+                const page = await Promise.race(this.pages.map((p: any) => p.currentRequest.then(() => p)));
+                page.currentRequest = page.currentRequest.then(() => {
+                    return new Promise((resolve) => {
+                        page.release = resolve;
+                    });
+                });
+                resolve(page);
+            });
+        });
+
+        this.claimRequest = claimRequest;
+        return claimRequest;
+    }
+
+    public async releasePage(page: Page) {
+        (page as any).release();
+    }
+
+    public close() {
+        this.browser.close();
+    }
+}
+
 const start = Date.now();
 (async function () {
     console.log(`Beginning Scrape of [${Object.keys(societyScrapers).length}] societies at [${new Date()}]`);
-    const browser = await puppeteer.launch({});
-    const page = await browser.newPage();
+    const browser = new ParallelBrowser(parallel);
+    await browser.init();
+
     try {
         const runDir = join(outDir, `${Date.now()}`);
         mkdirp.sync(runDir);
         const scrapers: SocietyScraper[] = Object.values(societyScrapers).map(s => new s());
         let validScrapers = scrapers.filter(s => s.whitelist);
         if (!validScrapers.length) validScrapers = scrapers;
-        for (const scraper of validScrapers) {
-            const scraperSpinner = ora(`Running scrape of [${scraper.societyName}]`).start();
-            const scrapeFile = join(runDir, `${scraper.societyName}.json`);
-            console.info(`Scraping [${scraper.societyName}] into [${scrapeFile}]`);
-            const ssw = new StructuredStreamWriter(StructuredFormat.JSON, scrapeFile);
+        await Promise.all(
+            validScrapers.map(async (scraper) => {
+                const page = await browser.claimPage();
+                const scrapeFile = join(runDir, `${scraper.societyName}.json`);
+                console.info(`Running scrape of [${scraper.societyName}] into [${scrapeFile}]`);
+                const ssw = new StructuredStreamWriter(StructuredFormat.JSON, scrapeFile);
 
-            await page.goto(scraper.entryUrl);
-
-            const socContexts: SocietyContext[] = await scraper.getSocietiesContext(page);
-            let index = -1;
-            for (const context of socContexts) {
                 try {
-                    index += 1;
-                    let el = context.el;
-                    if (context.url) {
-                        scraperSpinner.info(`[${index}/${socContexts.length}] Navigating to [${context.url}]`);
-                        // console.info(`Navigating to [${context.url}] [${index}/${socContexts.length}]`);
-                        await page.goto(context.url);
-                        el = await page.$('body') as ElementHandle;
-                    }
-                    await page.evaluate(utils);
-                    await ssw.writeItem(
-                        postProcessData(scraper, await scraper.getSocietyData(el!)),
-                    );
-                } catch (err) {
-                    console.warn(`Error on page:`, err);
-                }
-            }
+                    await page.goto(scraper.entryUrl);
 
-            ssw.done();
-            console.info(`Written [${scraper.societyName}] societies into [${scrapeFile}]`);
-            scraperSpinner.succeed();
-        }
+                    const socContexts: SocietyContext[] = await scraper.getSocietiesContext(page);
+                    let index = -1;
+                    for (const context of socContexts) {
+                        await sleep(1000);
+                        try {
+                            index += 1;
+                            let el = context.el;
+                            if (context.url) {
+                                // scraperSpinner.info(`[${index}/${socContexts.length}] Navigating to [${context.url}]`);
+                                // console.info(`Navigating to [${context.url}] [${index}/${socContexts.length}]`);
+                                await page.goto(context.url);
+                                el = await page.$('body') as ElementHandle;
+                            }
+                            await page.evaluate(utils);
+                            await ssw.writeItem(
+                                postProcessData(scraper, await scraper.getSocietyData(el!)),
+                            );
+                        } catch (err) {
+                            console.warn(`[${context.url}] Error on page:`, err);
+                        }
+                    }
+
+                    console.info(`Written [${scraper.societyName}] societies into [${scrapeFile}]`);
+                } catch (err) {
+                    console.warn(`Failed to get [${scraper.societyName}]`, err);
+                }
+                ssw.done();
+                // scraperSpinner.succeed();
+                await browser.releasePage(page);
+            })
+        );
     } finally {
-        await page.close();
         await browser.close();
     }
 
