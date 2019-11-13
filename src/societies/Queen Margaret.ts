@@ -1,15 +1,15 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Queenmargaret extends SocietyScraper {
-    whitelist = false;
-    societyName = 'Queenmargaret';
+    whitelist = true;
+    societyName = 'Queen Margaret';
     entryUrl = 'https://www.qmusu.org.uk/groups';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.categoryBox.all-groups a:not(.uc-load-more-groups';
+    contextSelector = '.uc-group-list-page-wrapper:last-of-type > a';
     contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors

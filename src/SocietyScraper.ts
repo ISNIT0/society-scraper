@@ -36,16 +36,20 @@ export abstract class SocietyScraper {
         );
         const nextPageExists = this.contextPaginate && await page.$(this.contextPaginate);
         if (this.contextPaginate && nextPageExists) {
-            console.log(`Paginating context querying`);
-            const newHref = await nextPageExists.evaluate((el) => el.getAttribute('href'));
-            if (newHref) {
-                await page.goto(resolve(this.entryUrl, newHref));
-            } else {
-                await page.click(this.contextPaginate);
-                await sleep(1000);
+            try {
+                console.log(`Paginating context querying`);
+                const newHref = await nextPageExists.evaluate((el) => el.getAttribute('href'));
+                if (newHref && !newHref.startsWith('javascript')) {
+                    await page.goto(resolve(this.entryUrl, newHref));
+                } else {
+                    await page.click(this.contextPaginate);
+                    await sleep(1000);
+                }
+                const nextContexts = await this.getSocietiesContext(page);
+                return contexts.concat(nextContexts as any);
+            } catch {
+                return contexts;
             }
-            const nextContexts = await this.getSocietiesContext(page);
-            return contexts.concat(nextContexts as any);
         } else {
             return contexts;
         }
