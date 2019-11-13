@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Leicester extends SocietyScraper {
     whitelist = false;
-    societyName = 'Leicester';
+    universityName = 'Leicester';
     entryUrl = 'https://www.leicesterunion.com/opportunities/societies/findasociety/';
 
     /* contextSelector

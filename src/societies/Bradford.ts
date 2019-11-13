@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Bradford extends SocietyScraper {
     whitelist = false;
-    societyName = 'Bradford';
+    universityName = 'Bradford';
     entryUrl = 'https://www.bradfordunisu.co.uk/groups?group_type=activities&group_cat=&search=';
 
     /* contextSelector

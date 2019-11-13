@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Sheffield extends SocietyScraper {
     whitelist = false;
-    societyName = 'Sheffield';
+    universityName = 'Sheffield';
     entryUrl = 'https://yoursu.sheffield.ac.uk/groups';
 
     /* contextSelector

@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Stirling extends SocietyScraper {
     whitelist = false;
-    societyName = 'Stirling';
+    universityName = 'Stirling';
     entryUrl = 'https://www.stirlingstudentsunion.com/clubssocieties/societies/';
 
     /* contextSelector

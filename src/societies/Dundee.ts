@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Dundee extends SocietyScraper {
     whitelist = false;
-    societyName = 'Dundee';
+    universityName = 'Dundee';
     entryUrl = 'https://www.dusa.co.uk/get-involved/societies/a-z/';
 
     /* contextSelector

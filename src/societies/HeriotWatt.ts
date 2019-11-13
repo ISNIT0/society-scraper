@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class HeriotWatt extends SocietyScraper {
     whitelist = false;
-    societyName = 'Heriot-Watt';
+    universityName = 'Heriot-Watt';
     entryUrl = 'https://www.hwunion.com/get-involved/societies/';
 
     /* contextSelector

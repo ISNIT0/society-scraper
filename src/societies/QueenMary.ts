@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class QueenMary extends SocietyScraper {
     whitelist = false;
-    societyName = 'QueenMary';
+    universityName = 'QueenMary';
     entryUrl = 'https://www.qmsu.org/societies/findme/all/';
 
     /* contextSelector

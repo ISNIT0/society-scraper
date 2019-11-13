@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Keele extends SocietyScraper {
     whitelist = false;
-    societyName = 'Keele';
+    universityName = 'Keele';
     entryUrl = 'https://keelesu.com/activities/clubs-societies//';
 
     /* contextSelector

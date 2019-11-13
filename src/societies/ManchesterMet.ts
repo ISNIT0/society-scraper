@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class ManchesterMet extends SocietyScraper {
     whitelist = false;
-    societyName = 'ManchesterMet';
+    universityName = 'ManchesterMet';
     entryUrl = 'https://www.theunionmmu.org/groups/';
 
     /* contextSelector

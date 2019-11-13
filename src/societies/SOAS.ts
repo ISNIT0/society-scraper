@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class SOAS extends SocietyScraper {
     whitelist = false;
-    societyName = 'SOAS';
+    universityName = 'SOAS';
     entryUrl = 'https://soasunion.org/activities/societies/';
 
     /* contextSelector

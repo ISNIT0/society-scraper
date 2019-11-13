@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class ArtsuniversityBournemouth extends SocietyScraper {
     whitelist = false;
-    societyName = 'Arts university Bournemouth';
+    universityName = 'Arts university Bournemouth';
     entryUrl = 'https://www.aubsu.co.uk/activities/clubs_societies/';
 
     /* contextSelector

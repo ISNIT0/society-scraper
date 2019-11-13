@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class CollegeLondon extends SocietyScraper {
     whitelist = false;
-    societyName = 'CollegeLondon';
+    universityName = 'CollegeLondon';
     entryUrl = 'http://studentsunionucl.org/clubs-societies/directory';
 
     /* contextSelector

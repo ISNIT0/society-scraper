@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Coventry extends SocietyScraper {
     whitelist = false;
-    societyName = 'Coventry';
+    universityName = 'Coventry';
     entryUrl = 'https://www.cusu.org/societies/a-z-societies/';
 
     /* contextSelector

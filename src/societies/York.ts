@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class York extends SocietyScraper {
     whitelist = false;
-    societyName = 'York';
+    universityName = 'York';
     entryUrl = 'https://yusu.org/student-life/clubs-and-socs#societies-a-z';
 
     /* contextSelector

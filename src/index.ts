@@ -106,7 +106,7 @@ class ParallelBrowser {
 
 const start = Date.now();
 (async function () {
-    console.log(`Beginning Scrape of [${Object.keys(societyScrapers).length}] societies at [${new Date()}]`);
+    console.log(`Beginning Scrape of [${Object.keys(societyScrapers).length}] Universities at [${new Date()}]`);
     const browser = new ParallelBrowser(parallel);
     await browser.init();
 
@@ -119,8 +119,8 @@ const start = Date.now();
         await Promise.all(
             validScrapers.map(async (scraper) => {
                 const page = await browser.claimPage();
-                const scrapeFile = join(runDir, `${scraper.societyName}.json`);
-                console.info(`Running scrape of [${scraper.societyName}] into [${scrapeFile}]`);
+                const scrapeFile = join(runDir, `${scraper.universityName}.json`);
+                console.info(`Running scrape of [${scraper.universityName}] into [${scrapeFile}]`);
                 const ssw = new StructuredStreamWriter(StructuredFormat.JSON, scrapeFile);
 
                 try {
@@ -148,9 +148,9 @@ const start = Date.now();
                         }
                     }
 
-                    console.info(`Written [${scraper.societyName}] societies into [${scrapeFile}]`);
+                    console.info(`Written [${scraper.universityName}] societies into [${scrapeFile}]`);
                 } catch (err) {
-                    console.warn(`Failed to get [${scraper.societyName}]`, err);
+                    console.warn(`Failed to get [${scraper.universityName}]`, err);
                 }
                 ssw.done();
                 // scraperSpinner.succeed();

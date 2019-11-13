@@ -3,7 +3,7 @@ import { ElementHandle } from "puppeteer";
 
 export class LondonSchoolofEconomics extends SocietyScraper {
     whitelist = false;
-    societyName = 'LondonSchoolofEconomics';
+    universityName = 'LondonSchoolofEconomics';
     entryUrl = 'https://www.lsesu.com/join-in/societies/';
 
     /* contextSelector

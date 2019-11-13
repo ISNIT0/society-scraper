@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class CityUOL extends SocietyScraper {
     whitelist = false;
-    societyName = 'City UOL';
+    universityName = 'City UOL';
     entryUrl = 'https://www.citystudents.co.uk/getinvolved/societies/';
 
     /* contextSelector

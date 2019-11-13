@@ -1,8 +1,8 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Queenmargaret extends SocietyScraper {
-    whitelist = true;
-    societyName = 'Queen Margaret';
+    whitelist = false;
+    universityName = 'Queen Margaret';
     entryUrl = 'https://www.qmusu.org.uk/groups';
 
     /* contextSelector

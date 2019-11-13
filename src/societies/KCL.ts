@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class KCL extends SocietyScraper {
     whitelist = false;
-    societyName = 'KCL';
+    universityName = 'KCL';
     entryUrl = 'https://www.kclsu.org/getinvolved/societies/joiningagroup/';
 
     /* contextSelector

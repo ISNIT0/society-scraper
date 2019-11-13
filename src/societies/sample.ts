@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class SAMPLE extends SocietyScraper {
     whitelist = false;
-    societyName = 'SAMPLE';
+    universityName = 'SAMPLE';
     entryUrl = 'https://www.nusu.co.uk/getinvolved/societies/list/';
 
     /* contextSelector

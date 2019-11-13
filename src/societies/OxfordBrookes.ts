@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class OxfordBrookes extends SocietyScraper {
     whitelist = false;
-    societyName = 'OxfordBrookes';
+    universityName = 'OxfordBrookes';
     entryUrl = 'https://www.brookesunion.org.uk/groups';
 
     /* contextSelector

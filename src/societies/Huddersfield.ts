@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class Huddersfield extends SocietyScraper {
     whitelist = false;
-    societyName = 'Huddersfield';
+    universityName = 'Huddersfield';
     entryUrl = 'https://www.huddersfield.su/groups?group_type=&group_cat=&search=';
 
     /* contextSelector

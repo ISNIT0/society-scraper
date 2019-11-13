@@ -3,7 +3,7 @@ import { ElementHandle } from "puppeteer";
 
 export class Warwick extends SocietyScraper {
     whitelist = false;
-    societyName = 'Warwick';
+    universityName = 'Warwick';
     entryUrl = 'https://www.warwicksu.com/societies-sports/societies/';
 
     /* contextSelector

@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class NottinghamTrent extends SocietyScraper {
     whitelist = false;
-    societyName = 'NottinghamTrent';
+    universityName = 'NottinghamTrent';
     entryUrl = 'https://www.trentstudents.org/groups?group_type=societies-1013&group_cat=&search=';
 
     /* contextSelector

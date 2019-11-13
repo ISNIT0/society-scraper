@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class LiverpoolJohnMoores extends SocietyScraper {
     whitelist = false;
-    societyName = 'LiverpoolJohnMoores';
+    universityName = 'LiverpoolJohnMoores';
     entryUrl = 'https://www.jmsu.co.uk/groups';
 
     /* contextSelector

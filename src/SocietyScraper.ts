@@ -12,7 +12,7 @@ export interface SocietyContext {
 export abstract class SocietyScraper {
     contextPaginate?: string;
     whitelist?: boolean;
-    abstract societyName: string;
+    abstract universityName: string;
     abstract entryUrl: string;
     public async getSocietiesContext(page: Page): Promise<SocietyContext[]> {
         if (!this.contextSelector) {

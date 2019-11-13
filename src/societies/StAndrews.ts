@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 
 export class StAndrews extends SocietyScraper {
     whitelist = false;
-    societyName = 'StAndrews';
+    universityName = 'StAndrews';
     entryUrl = 'https://www.yourunion.net/activities/societies/societiesa-z/';
 
     /* contextSelector
