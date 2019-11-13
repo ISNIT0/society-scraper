@@ -1,0 +1,31 @@
+import { SocietyScraper } from "src/SocietyScraper";
+
+export class Goldsmith extends SocietyScraper {
+    whitelist = false;
+    societyName = 'Goldsmith';
+    entryUrl = 'https://www.goldsmithssu.org/activities/list/';
+
+    /* contextSelector
+    If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
+    Otherwise, it should select the highest level element that contains just the society
+    */
+    contextSelector = '.msl_organisation_list a.msl-gl-link';
+    // contextPaginate = '.next-page > a';
+
+    /* dataSelectors
+    The dataSelectors will be run once for each context that was selected above.
+    If the context was an <a>, the dataSelector will be run in the new webpage.
+    If the context was a container, the dataSelector will be run only within that element.
+
+    The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
+    */
+    dataSelectors = {
+        title: 'li.current-page',
+        description: '.mslwidget p',
+        email: 'div.col-xs-12.col-sm-6 .msl_email',
+        facebook: 'div.col-xs-12.col-sm-6 .msl_facebook',
+        instagram: 'div.col-xs-12.col-sm-6 .msl_instagram',
+        twitter: 'div.col-xs-12.col-sm-6 .msl_twitter',
+        website: 'div.col-xs-12.col-sm-6 .msl_web',
+    };
+}
