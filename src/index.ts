@@ -1,6 +1,5 @@
 import minimist from 'minimist';
 import * as societyScrapers from './societies';
-import ora from 'ora';
 import puppeteer, { ElementHandle, Browser, Page } from 'puppeteer';
 import { SocietyContext, SocietyScraper } from './SocietyScraper';
 import { postProcessData, sleep } from './util';
@@ -73,6 +72,10 @@ class ParallelBrowser {
 
         for (let i = 0; i < this.parallel; i++) {
             const page = await this.browser.newPage();
+            page.on('dialog', async dialog => {
+                console.log(`Dismissing dialog from [${page.url}]:`, dialog.message());
+                await dialog.dismiss();
+            });
             (page as any).currentRequest = Promise.resolve();
             this.pages.push(page);
         }

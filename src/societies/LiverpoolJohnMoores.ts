@@ -9,7 +9,7 @@ export class LiverpoolJohnMoores extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.group-box';
+    contextSelector = '.uc-group-list-page-wrapper:last-of-type > a';
     contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors

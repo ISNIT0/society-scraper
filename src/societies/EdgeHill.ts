@@ -9,7 +9,7 @@ export class EdgeHill extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.uc-group-list-page-wrapper a';
+    contextSelector = '.uc-group-list-page-wrapper:last-of-type > a';
     contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
@@ -20,7 +20,7 @@ export class EdgeHill extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: '.title h1', 
+        title: '.title h1',
         description: '#organisation', //hard slectors
         email: '.msl_email',
         facebook: '.msl_facebook',

@@ -9,7 +9,7 @@ export class LiverpoolHope extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.uc-group-list-page-wrapper a';
+    contextSelector = '.uc-group-list-page-wrapper:last-of-type > a';
     contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
@@ -26,6 +26,6 @@ export class LiverpoolHope extends SocietyScraper {
         facebook: 'a[href^="https://www.facebook"]',
         instagram: 'a[href^="https://www.instagram"]',
         twitter: 'a[href^="https://www.twitter"]',
-        website: '.msl_web', 
+        website: '.msl_web',
     };
 }
