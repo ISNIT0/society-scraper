@@ -1,0 +1,31 @@
+import { SocietyScraper } from "src/SocietyScraper";
+
+export class StMarysTwickenham extends SocietyScraper {
+    whitelist = false;
+    universityName = 'St Marys Twickenham';
+    entryUrl = 'https://www.stmaryssu.co.uk/societies';
+
+    /* contextSelector
+    If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
+    Otherwise, it should select the highest level element that contains just the society
+    */
+    contextSelector = 'li.collapsable ul a';
+    // contextPaginate = '.next-page > a';
+
+    /* dataSelectors
+    The dataSelectors will be run once for each context that was selected above.
+    If the context was an <a>, the dataSelector will be run in the new webpage.
+    If the context was a container, the dataSelector will be run only within that element.
+
+    The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
+    */
+    dataSelectors = {
+        title: 'h1.sochead',
+        description: 'div.section.default-body p',
+        email: 'div.section.default-body a[href^="mailto:"]',
+        facebook: 'div.section.default-body a[href^="http://www.facebook"]',
+        instagram: 'div.section.default-body a[href^="http://www.instagram"]',
+        twitter: 'div.section.default-body a[href^="http://www.twitter"]',
+        website: '.msl_web',
+    };
+}
