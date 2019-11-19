@@ -88,4 +88,12 @@ export * from "./SheffieldHallam"
 export * from "./St Mary's Twickenham"
 export * from "./West London"
 export * from "./Westminster"
+export * from "./Brunel"
+export * from "./Bournemouth"
+export * from "./Aberystwyth"
+export * from "./Goldsmiths"
+
+
+
+
 
