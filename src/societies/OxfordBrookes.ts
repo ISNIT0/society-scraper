@@ -10,7 +10,7 @@ export class OxfordBrookes extends SocietyScraper {
     Otherwise, it should select the highest level element that contains just the society
     */
     contextSelector = 'div.category-box-wrapper a';
-    // contextPaginate = '.next-page > a';
+    contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -23,9 +23,9 @@ export class OxfordBrookes extends SocietyScraper {
         title: '.title h1',
         description: 'div.contentBoxes>p:nth-of-type(3)',
         email: 'div.contentBoxes a[href^="mailto"]',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
+        facebook: '.contentBoxes a[href^="https://www.facebook"]',
+        instagram: '..contentBoxes a[href^="https://www.instagram"]',
+        twitter: '.contentBoxes a[href^="https://twitter"]',
         website: '.msl_web',
     };
 }

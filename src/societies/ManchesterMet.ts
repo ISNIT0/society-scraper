@@ -10,7 +10,7 @@ export class ManchesterMet extends SocietyScraper {
     Otherwise, it should select the highest level element that contains just the society
     */
     contextSelector = 'a.group-box';
-    contextPaginate = '.next-page > a';
+    contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.

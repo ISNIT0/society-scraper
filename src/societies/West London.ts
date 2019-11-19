@@ -20,7 +20,7 @@ export class WestLondon extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: '',
+        title: '',  // cant get page acces without a log in
         description: '',
         email: '',
         facebook: '',

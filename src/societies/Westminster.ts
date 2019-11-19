@@ -21,7 +21,7 @@ export class Westminster extends SocietyScraper {
     */
     dataSelectors = {
         title: '.title h1',
-        description: '.contentBoxes p',
+        description: '.portlet .contentBoxes:not(.top-container)',
         email: '.msl_email',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',

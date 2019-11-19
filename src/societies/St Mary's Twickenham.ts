@@ -20,12 +20,12 @@ export class StMarysTwickenham extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1.sochead',
-        description: 'div.section.default-body p',
-        email: 'div.section.default-body a[href^="mailto:"]',
-        facebook: 'div.section.default-body a[href^="http://www.facebook"]',
-        instagram: 'div.section.default-body a[href^="http://www.instagram"]',
-        twitter: 'div.section.default-body a[href^="http://www.twitter"]',
+        title: '.inside-border-padding h1',
+        description: 'div.inside-border-padding .section.default-body',
+        email: 'div.inside-border-padding .section.default-body a[href^="mailto:"]',
+        facebook: 'div.inside-border-padding .section.default-body a[href^="http://www.facebook"]',
+        instagram: 'div.inside-border-padding a[href^="http://www.instagram"]',
+        twitter: 'div.inside-border-padding a[href^="http://www.twitter"]',
         website: '.msl_web',
     };
 }

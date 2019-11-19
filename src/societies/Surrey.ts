@@ -9,7 +9,7 @@ export class Surrey extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ol.items-filtered> li> a';
+    contextSelector = 'ol.items-filtered> li> a'; // needs a selecotr for 'cacnel' with a pop up to log in
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
