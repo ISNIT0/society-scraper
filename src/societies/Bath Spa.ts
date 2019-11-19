@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class BathSpa extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Bath Spa';
     entryUrl = 'https://www.nusu.co.uk/getinvolved/societies/list/';
 

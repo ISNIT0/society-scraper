@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class StMarysTwickenham extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'St Marys Twickenham';
     entryUrl = 'https://www.stmaryssu.co.uk/societies';
 

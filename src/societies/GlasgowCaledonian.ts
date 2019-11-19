@@ -10,7 +10,7 @@ export class GlasgowCaledonian extends SocietyScraper {
     Otherwise, it should select the highest level element that contains just the society
     */
     contextSelector = '.category-box-wrapper a';
-    contextPaginate = '.uc-load-more-groups';
+    // contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
