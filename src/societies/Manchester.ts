@@ -10,7 +10,7 @@ export class Manchester extends SocietyScraper {
     Otherwise, it should select the highest level element that contains just the society
     */
     contextSelector = 'a.group-box';
-    contextPaginate = '.next-page > a';
+    contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,12 +20,14 @@ export class Manchester extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1.sochead',
-        description: '#description',
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
+        title: '.contentBoxes h1',
+        description: '.contentBoxes p',
+        email: '.contentBoxes  a[href^="mailto:"]',
+        facebook: '.contentBoxes  a[href^="https://www.facebook"]',
+        instagram: '.contentBoxes  a[href^="https://www.instagram"]',
+        twitter: '.contentBoxes  a[href^="https://twitter"]',
         website: '.msl_web',
+        linkedin: '.contentBoxes  a[href^="https://www.linkedin"]',
+        youtube: '.contentBoxes  a[href^="https://www.youtube"]'
     };
 }

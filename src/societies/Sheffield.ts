@@ -10,7 +10,7 @@ export class Sheffield extends SocietyScraper {
     Otherwise, it should select the highest level element that contains just the society
     */
     contextSelector = 'div.uc-group-list-page-wrapper> a';
-    // contextPaginate = '.next-page > a';
+    contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
