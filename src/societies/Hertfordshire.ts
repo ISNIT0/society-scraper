@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Hertfordshire extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Hertfordshire';
     entryUrl = 'https://hertfordshire.su/your-opportunities/societies/joinasociety/';
 
