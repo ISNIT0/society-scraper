@@ -1,9 +1,9 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Buckinghamshirenew extends SocietyScraper {
+export class Chester extends SocietyScraper {
     whitelist = false;
-    universityName = 'Buckinghamshire New';
-    entryUrl = 'https://www.bucksstudentsunion.org/activities/socs/';
+    universityName = 'Chester';
+    entryUrl = 'https://www.chestersu.com/activities/societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
@@ -20,12 +20,12 @@ export class Buckinghamshirenew extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1',
-        description: '.mslwidget p',
-        email: 'a[href^="mailto:"]',
-        facebook: 'a[href^="https://www.facebook"]',
-        instagram: 'a[href^="https://www.instagram"]',
-        twitter: 'a[href^="https://twitter"]',
+        title: '.page-title',
+        description: '#organisation .mslwidget p',
+        email: '#organisation .mslwidget a[href^="mailto:"]',
+        facebook: '#organisation .mslwidget a[href^="https://www.facebook"]',
+        instagram: '#organisation .mslwidget a[href^="https://www.instagram"]',
+        twitter: '#organisation .mslwidget a[href^="https://twitter"]',
         website: '.msl_web',
     };
 }

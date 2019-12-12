@@ -20,8 +20,8 @@ export class Greenwich extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1.sochead',
-        description: '#description',
+        title: '#organisation>.row .col-md-8 h1:nth-of-type(1)',
+        description: 'div.event_body p',
         email: '.msl_email',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',

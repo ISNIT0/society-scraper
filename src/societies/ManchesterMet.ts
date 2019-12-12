@@ -22,10 +22,10 @@ export class ManchesterMet extends SocietyScraper {
     dataSelectors = {
         title: '.title h1',
         description: '#description', //needs finishing
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
+        email: '.contentBoxes a[href^="mailto:"]',
+        facebook: '.contentBoxes a[href^="https://www.facebook"]',
+        instagram: '.contentBoxes a[href^="https://www.instagram"]',
+        twitter: '.contentBoxes a[href^="https://twitter"]',
         website: '.msl_web',
     };
 }

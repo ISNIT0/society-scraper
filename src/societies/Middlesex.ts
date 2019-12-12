@@ -21,7 +21,7 @@ export class Middlesex extends SocietyScraper {
     */
     dataSelectors = {
         title: '.title h1',
-        description: '#description',
+        description: '.contentBoxes p',
         email: '.contentBoxes a[href^="https://mailto:"]',
         facebook: '.contentBoxes a[href^="https://www.facebook"]',
         instagram: '.contentBoxes a[href^="https://www.instagram"]',

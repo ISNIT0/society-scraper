@@ -20,12 +20,12 @@ export class YorkStJohn extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1.sochead',
-        description: '#description',
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
+        title: 'h1',
+        description: '.profile-bio p',
+        email: '.panel-body a[href^="mailto:"]',
+        facebook: '.panel-body a[href^="https://www.facebook"]',
+        instagram: '.panel-body a[href^="https://www.instagram"]',
+        twitter: '.panel-body a[href^="https://twitter"]',
         website: '.msl_web',
     };
 }

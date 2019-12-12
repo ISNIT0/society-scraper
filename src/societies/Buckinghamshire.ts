@@ -23,7 +23,7 @@ export class Buckinghamshire extends SocietyScraper {
         title: 'h1',
         description: '.mslwidget p',
         email: 'a[href^="mailto:"]',
-        facebook: 'a[href^="https://www.facebook"]',
+        facebook: 'a[href^="https://www.facebook"], a[href^="http://www.facebook"]',
         instagram: 'a[href^="https://www.instagram"]',
         twitter: 'a[href^="https://twitter"]',
         website: '.msl_web',

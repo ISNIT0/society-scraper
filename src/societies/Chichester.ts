@@ -21,7 +21,7 @@ export class Chichester extends SocietyScraper {
     */
     dataSelectors = {
         title: '.page-detail h1',
-        description: '#description',
+        description: '.desc-c .mslwidget p',
         email: '.msl_email',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',

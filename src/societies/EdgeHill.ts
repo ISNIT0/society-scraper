@@ -19,13 +19,13 @@ export class EdgeHill extends SocietyScraper {
 
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
-    dataSelectors = {
+   dataSelectors = {
         title: '.title h1',
-        description: '#organisation', //hard slectors
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
+        description: '.contentBoxes p',
+        email: 'div.contentBoxes a[href^="mailto"]',
+        facebook: '.contentBoxes a[href^="https://www.facebook"]',
+        instagram: '.contentBoxes a[href^="https://www.instagram"]',
+        twitter: '.contentBoxes a[href^="https://twitter"]',
         website: '.msl_web',
     };
 }

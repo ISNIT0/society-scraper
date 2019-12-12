@@ -21,11 +21,11 @@ export class Surrey extends SocietyScraper {
     */
     dataSelectors = {
         title: 'h1.sochead', // every page is unique
-        description: '#description', // every page is unique
-        email: '.msl_email', // every page is unique
-        facebook: '.wsite-social-facebook', // every page is unique
-        instagram: '.msl_instagram', // every page is unique
-        twitter: '.msl_twitter', // every page is unique
-        website: '.msl_web', // every page is unique
+        description: '#description', 
+        email: '.col_right a[href^="mailto:"]', 
+        facebook: '.col_right a[href^="https://www.facebook"]', 
+        instagram: '.col_right a[href^="https://www.instagram"]', 
+        twitter: '.col_right a[href^="https://www.twitter"]', 
+        website: '.msl_web', 
     };
 }

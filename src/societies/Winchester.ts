@@ -22,7 +22,7 @@ export class Winchester extends SocietyScraper {
     dataSelectors = {
         title: '.title h1',
         description: '.contentBoxes p',
-        email: '.msl_email',
+        email: 'a[href^="mailto:"]',
         facebook: '.contentBoxes a[href^="https://www.facebook"]',
         instagram: '.contentBoxes a[href^="https://www.instagram"]',
         twitter: '.contentBoxes a[href^="https://twitter"]',
