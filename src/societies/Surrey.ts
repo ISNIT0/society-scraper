@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Surrey extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Surrey';
     entryUrl = 'https://www.ussu.co.uk/getinvolved/clubs';
 

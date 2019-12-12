@@ -1,16 +1,16 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Manchester extends SocietyScraper {
+export class Solent extends SocietyScraper {
     whitelist = false;
-    universityName = 'Manchester';
-    entryUrl = 'https://manchesterstudentsunion.com/groups?group_type=club-society-782&group_cat=&search=';
+    universityName = 'Solent';
+    entryUrl = 'https://www.solentsu.co.uk/get-involved/societies/find-a-society/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.group-banner';
-    contextPaginate = '.uc-load-more-groups';
+    contextSelector = '.msl_organisation_list a.msl-gl-link';
+    // contextPaginate = '.next-page > a';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,14 +20,12 @@ export class Manchester extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: '.contentBoxes h1',
-        description: '.contentBoxes p',
-        email: '.contentBoxes  a[href^="mailto:"]',
-        facebook: '.contentBoxes  a[href^="https://www.facebook"]',
-        instagram: '.contentBoxes  a[href^="https://www.instagram"]',
-        twitter: '.contentBoxes  a[href^="https://twitter"]',
+        title: 'h1',
+        description: '.mslwidget p',
+        email: '#organisation a[href^="mailto:]',
+        facebook: '#organisation a[href^="https://www.facebook"]',
+        instagram: '#organisation a[href^="https://www.instagram"]',
+        twitter: '#organisation a[href^="https://twitter"]',
         website: '.msl_web',
-        linkedin: '.contentBoxes  a[href^="https://www.linkedin"]',
-        youtube: '.contentBoxes  a[href^="https://www.youtube"]'
     };
 }

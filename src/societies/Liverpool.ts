@@ -9,8 +9,8 @@ export class Liverpool extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list > li > a';
-    contextPaginate = '.next-page > a';
+    contextSelector = 'div.uc-group-list-page-wrapper a';
+    contextPaginate = '.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.
@@ -20,11 +20,11 @@ export class Liverpool extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: 'h1.sochead',
+        title: '.title h1',
         description: '#description',
         email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
+        facebook: '.contentBoxes a[href^="https://www.facebook"]',
+        instagram: '.contentBoxes a[href^="https://www.facebook',
         twitter: '.msl_twitter',
         website: '.msl_web',
     };

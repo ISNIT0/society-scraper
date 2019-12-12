@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Sheffieldhallam extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Sheffield Hallam';
     entryUrl = 'https://www.hallamstudentsunion.com/get_involved/societies/';
 

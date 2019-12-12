@@ -9,8 +9,8 @@ export class Bristol extends SocietyScraper {
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = 'ul.msl_organisation_list > li > a';
-    contextPaginate = '.next-page > a';
+    contextSelector = 'a.group-box';
+    contextPaginate = 'a.uc-load-more-groups';
 
     /* dataSelectors
     The dataSelectors will be run once for each context that was selected above.

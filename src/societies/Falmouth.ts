@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Falmouth extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Falmouth';
     entryUrl = 'https://www.thesu.org.uk/studentopportunities/socs/';
 

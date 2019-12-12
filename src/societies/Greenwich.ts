@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Greenwich extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Greenwich';
     entryUrl = 'https://www.greenwichsu.co.uk/societies/#join';
 

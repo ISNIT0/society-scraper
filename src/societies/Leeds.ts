@@ -1,15 +1,29 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
-export class Chichester extends SocietyScraper {
+export class Leeds extends SocietyScraper {
     whitelist = false;
-    universityName = 'Chichester';
-    entryUrl = 'https://www.ucsu.org/societies/su_societies/';
+    universityName = 'Leeds';
+    entryUrl = 'https://www.luu.org.uk/clubs-and-societies/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.
     Otherwise, it should select the highest level element that contains just the society
     */
-    contextSelector = '.msl_organisation_list>ul .msl-gl-link';
+    contextSelector = 'a[href^="/clubs-and-societies/academic/','a[href^="/clubs-and-societies/culture/', 
+    'a[href^="/clubs-and-societies/dance/',
+'a[href^="/clubs-and-societies/faith/',
+'a[href^="/clubs-and-societies/general-inerest/',
+'a[href^="/clubs-and-societies/martial-arts/',
+'a[href^="/clubs-and-societies/media/',
+'a[href^="/clubs-and-societies/outdoor/',
+'a[href^="/clubs-and-societies/political-campaigning/',
+'a[href^="/clubs-and-societies/sports/',
+'a[href^="/clubs-and-societies/volunteering/',
+'a[href^="/clubs-and-societies/welfare/',
+
+    contextSelector = '.section.section.section--white .container .row a.club';
+
+
     // contextPaginate = '.next-page > a';
 
     /* dataSelectors
@@ -20,9 +34,9 @@ export class Chichester extends SocietyScraper {
     The values extracted by selected elements will be assigned to the corresponding key (e.g. the "title" will be the textContent of "h1.sochead")
     */
     dataSelectors = {
-        title: '.page-detail h1',
-        description: '#description',
-        email: '.msl_email',
+        title: 'h1',
+        description: 'h2+p:nth-of-type(1)',
+        email: 'a[href^="mailto:',
         facebook: '.msl_facebook',
         instagram: '.msl_instagram',
         twitter: '.msl_twitter',

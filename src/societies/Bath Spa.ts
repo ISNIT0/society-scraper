@@ -1,9 +1,9 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class BathSpa extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Bath Spa';
-    entryUrl = 'https://www.nusu.co.uk/getinvolved/societies/list/';
+    entryUrl = 'https://www.bathspasu.co.uk/opps/clubsandsocs/';
 
     /* contextSelector
     If each society has it's own web-page, contextSelector should select all <a> elements that point to pages.

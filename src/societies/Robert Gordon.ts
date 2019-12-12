@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class RobertGordon extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Robert Gordon';
     entryUrl = 'https://www.rguunion.co.uk/getinvolved/societies/';
 

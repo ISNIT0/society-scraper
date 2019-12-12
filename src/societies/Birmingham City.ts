@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class BirminghamCity extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Birmingham City';
     entryUrl = 'https://www.bcusu.com/get-involved/student-groups/';
 
