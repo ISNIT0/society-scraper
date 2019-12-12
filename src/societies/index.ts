@@ -117,4 +117,6 @@ export * from "./Newman"
 export * from "./Plymouth Marjon"
 export * from "./Suffolk"
 export * from "./Ravensbourne"
+export * from "./Chester"
+
 
