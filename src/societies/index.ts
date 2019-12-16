@@ -118,5 +118,8 @@ export * from "./Plymouth Marjon"
 export * from "./Suffolk"
 export * from "./Ravensbourne"
 export * from "./Chester"
-
+export * from "./Brunel"
+export * from "./Bournemouth"
+export * from "./Aberystwyth"
+export * from "./Goldsmiths"
 
