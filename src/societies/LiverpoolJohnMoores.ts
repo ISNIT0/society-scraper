@@ -22,10 +22,10 @@ export class LiverpoolJohnMoores extends SocietyScraper {
     dataSelectors = {
         title: '.title h1',
         description: 'td p',
-        email: 'a[href^="mailto:"',
-        facebook: '.msl_facebook', //not href
-        instagram: '.msl_instagram', // not a href
-        twitter: '.msl_twitter', // not a href
-        website: '.msl_web', // not a href
+        email: '.portlet a[href^="mailto:"]"',
+        facebook: '.portlet a[href^="http://www.facebook"]', 
+        instagram: '.portlet a[href^="http://www.instagram"]', 
+        twitter: '.portlet a[href^="http://www.twitter"]', 
+        website: '.msl_web', 
     };
 }

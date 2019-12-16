@@ -22,7 +22,7 @@ export class LiverpoolHope extends SocietyScraper {
     dataSelectors = {
         title: '.title h1',
         description: '.contentBoxes p:nth-of-type(2)',
-        email: '.msl_email', //hard selector
+        email: 'a[href^="mailto:', 
         facebook: 'a[href^="https://www.facebook"]',
         instagram: 'a[href^="https://www.instagram"]',
         twitter: 'a[href^="https://www.twitter"]',

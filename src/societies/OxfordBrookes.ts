@@ -21,10 +21,10 @@ export class OxfordBrookes extends SocietyScraper {
     */
     dataSelectors = {
         title: '.title h1',
-        description: 'div.contentBoxes>p:nth-of-type(3)',
+        description: '.contentBoxes p',
         email: 'div.contentBoxes a[href^="mailto"]',
         facebook: '.contentBoxes a[href^="https://www.facebook"]',
-        instagram: '..contentBoxes a[href^="https://www.instagram"]',
+        instagram: '.contentBoxes a[href^="https://www.instagram"]',
         twitter: '.contentBoxes a[href^="https://twitter"]',
         website: '.msl_web',
     };

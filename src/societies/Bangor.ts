@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Bangor extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Bangor';
     entryUrl = 'https://www.undebbangor.com/societies/societies/';
 

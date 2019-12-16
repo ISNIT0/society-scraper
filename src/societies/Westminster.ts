@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Westminster extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Westminster';
     entryUrl = 'https://www.uwsu.com/groups?group_type=societies-3261';
 

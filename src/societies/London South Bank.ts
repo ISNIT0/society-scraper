@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class LondonSouthBank extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'London South Bank';
     entryUrl = 'https://www.lsbsu.org/activities/societies_sportsclubs/societies/';
 

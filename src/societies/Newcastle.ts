@@ -22,8 +22,8 @@ export class Newcastle extends SocietyScraper {
     dataSelectors = {
         title: 'h1.sochead',
         description: '#description',
-        email: '.msl_email',
-        facebook: '.msl_facebook', // Facebook does not have a selector, I'm unable to select it. 
+        email: '.mslwidget a[href^="mailto:"',
+        facebook: '.mslwidget a[href^="https://www.facebook"]',  
         instagram: '.msl_instagram',
         twitter: '.msl_twitter',
         website: '.msl_web',

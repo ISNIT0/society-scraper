@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class LeedsArts extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Leeds Arts';
     entryUrl = 'https://www.leedsartsunion.org.uk/societiesandsports';
 
@@ -22,10 +22,10 @@ export class LeedsArts extends SocietyScraper {
     dataSelectors = {
         title: 'h2',
         description: 'div#comp-jxd9h1xk.txtNew',
-        email: '.msl_email',
-        facebook: '.msl_facebook',
-        instagram: '.msl_instagram',
-        twitter: '.msl_twitter',
+        email: 'a[href^="mailto:"]',
+        facebook: 'a[href^="https://www.facebook"]',
+        instagram: 'a[href^="https://www.instagram"]',
+        twitter: 'a[href^="https://www.twitter"]',
         website: '.msl_web',
     };
 }

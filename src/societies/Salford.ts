@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Salford extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Salford';
     entryUrl = 'https://www.salfordstudents.com/groups?group_type=society-793';
 

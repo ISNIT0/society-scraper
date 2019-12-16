@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Kingston extends SocietyScraper {
-    whitelist = true;
+    whitelist = false;
     universityName = 'Kingston';
     entryUrl = 'https://www.kingstonstudents.net/societies/a-z-of-societies';
 
