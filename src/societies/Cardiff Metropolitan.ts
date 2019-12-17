@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class CardiffMetropolitan extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Cardiff Metropolitan';
     entryUrl = 'https://www.cardiffmetsu.co.uk/societies/';
 

@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class SWrexhamGlyndŵrAMPLE extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Wrexham Glyndŵr';
     entryUrl = 'https://www.wrexhamglyndwrsu.org.uk/groups';
 

@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class EastLondon extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'East London';
     entryUrl = 'https://www.uelunion.org/societies/atoz/';
 

@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Swansea extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Swansea';
     entryUrl = 'https://www.swansea-union.co.uk/activities/societies/';
 

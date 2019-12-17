@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class LeedsBeckett extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Leeds Beckett';
     entryUrl = 'https://www.leedsbeckettsu.co.uk/groups?group_type=societies-925&group_cat=&search=';
 

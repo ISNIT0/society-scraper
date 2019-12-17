@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Leeds extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Leeds';
     entryUrl = 'https://www.luu.org.uk/clubs-and-societies/';
 

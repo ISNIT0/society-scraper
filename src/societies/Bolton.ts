@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Bolton extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Bolton';
     entryUrl = 'https://www.boltonsu.com/all-societies';
 

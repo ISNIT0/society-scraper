@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class LeedsTrinity extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Leeds Trinity';
     entryUrl = 'https://www.ltsu.co.uk/activities/societies/';
 

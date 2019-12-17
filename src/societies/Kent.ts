@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Kent extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Kent';
     entryUrl = 'https://kentunion.co.uk/activities#tab--societies/';
 

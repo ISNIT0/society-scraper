@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Suffolk extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Suffolk';
     entryUrl = 'https://www.uosunion.org/societies/joinasociety/';
 

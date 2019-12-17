@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Chichester extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Chichester';
     entryUrl = 'https://www.ucsu.org/societies/su_societies/';
 

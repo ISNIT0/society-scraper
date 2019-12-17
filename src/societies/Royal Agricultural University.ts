@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class RoyalAgriculturalUniversity extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Royal Agricultural University';
     entryUrl = 'https://www.rausu.co.uk/activities/societies';
 

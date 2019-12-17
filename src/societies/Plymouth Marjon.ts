@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class PlymouthMarjon extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Plymouth Marjon';
     entryUrl = 'https://www.marjonsu.com/groups?parent_link=get-involved-menu-wrapper';
 

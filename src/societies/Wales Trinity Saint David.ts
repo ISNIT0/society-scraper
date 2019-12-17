@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class WalesTrinitySaintDavid extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Wales Trinity Saint David';
     entryUrl = 'https://www.nusu.co.uk/getinvolved/societies/list/';
 

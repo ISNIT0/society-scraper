@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Bedfordshire extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Bedfordshire';
     entryUrl = 'https://www.bedssu.co.uk/groups?group_type=&group_cat=&search=';
 

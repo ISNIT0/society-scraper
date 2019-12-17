@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class WestLondon extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'West London';
     entryUrl = 'https://www.uwlsu.com/get-involved/societies//';
 

@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Derby extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Derby';
     entryUrl = 'https://www.derbyunion.co.uk/getinvolved/societies/';
 

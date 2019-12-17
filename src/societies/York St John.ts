@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class YorkStJohn extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'York St John';
     entryUrl = 'https://ysjsu.com/activities/Societies';
 

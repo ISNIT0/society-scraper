@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class CentralLancaster extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'CentralLancaster';
     entryUrl = 'https://www.uclansu.co.uk/groups';
 

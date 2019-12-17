@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class EdgeHill extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'EdgeHill';
     entryUrl = 'https://www.edgehillsu.org.uk/groups';
 

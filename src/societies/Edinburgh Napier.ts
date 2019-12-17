@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class EdinburghNapier extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Edinburgh Napier';
     entryUrl = 'https://www.nusu.co.uk/getinvolved/societies/list/';
 

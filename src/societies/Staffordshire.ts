@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Staffordshire extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Staffordshire';
     entryUrl = 'https://www.staffsunion.com/getinvolved/clubsandsocieties/';
 

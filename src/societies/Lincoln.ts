@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Lincoln extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Lincoln';
     entryUrl = 'https://lincolnsu.com/activities/sports';
 

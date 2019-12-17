@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Solent extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Solent';
     entryUrl = 'https://www.solentsu.co.uk/get-involved/societies/find-a-society/';
 

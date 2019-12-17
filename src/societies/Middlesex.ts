@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Middlesex extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Middlesex';
     entryUrl = 'https://www.mdxsu.com/groups';
 

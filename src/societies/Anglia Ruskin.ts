@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class AngliaRuskin extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Anglia Ruskin';
     entryUrl = 'https://www.angliastudent.com/societies/join/';
 

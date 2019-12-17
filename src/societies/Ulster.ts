@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Ulster extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Ulster';
     entryUrl = 'https://www.uusu.org/get_involved/societies/';
 

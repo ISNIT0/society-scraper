@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 import { ElementHandle } from "puppeteer";
 
 export class LondonSchoolofEconomics extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'LondonSchoolofEconomics';
     entryUrl = 'https://www.lsesu.com/join-in/societies/';
 

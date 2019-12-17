@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Sussex extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Sussex';
     entryUrl = 'https://www.sussexstudent.com/sport-societies-media/discover/';
 

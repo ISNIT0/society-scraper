@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Edinburgh extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Edinburgh';
     entryUrl = 'https://www.eusa.ed.ac.uk/activities/societies/findasociety/';
 

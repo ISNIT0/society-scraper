@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Sunderland extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Sunderland';
     entryUrl = 'https://www.sunderlandsu.co.uk/groups';
 

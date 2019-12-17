@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Reading extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Reading';
     entryUrl = 'https://www.rusu.co.uk/student-activities/societies/';
 

@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class LondonMetropolitan extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'London Metropolitan';
     entryUrl = 'https://www.londonmetsu.org.uk/societies/societies/';
 

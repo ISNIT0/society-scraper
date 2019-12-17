@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class GlasgowCaledonian extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Glasgow Caledonian';
     entryUrl = 'https://www.gcustudents.co.uk/groups?group_type=societies-1046';
 

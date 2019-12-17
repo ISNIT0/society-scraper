@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Ravensbourne extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Ravensbourne';
     entryUrl = 'https://www.ravesu.co.uk/socs/';
 
