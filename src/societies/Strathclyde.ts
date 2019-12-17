@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Strathclyde extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Strathclyde';
     entryUrl = 'https://www.strathunion.com/clubs-socs/societies/';
 

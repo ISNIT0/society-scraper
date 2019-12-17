@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class StGeorge extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'StGeorge\'s';
     entryUrl = 'https://www.sgsu.org.uk/club-soc/';
 

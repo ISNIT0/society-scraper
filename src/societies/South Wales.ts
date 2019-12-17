@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class SouthWales extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'South Wales';
     entryUrl = 'https://www.uswsu.com/groups';
 

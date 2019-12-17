@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Winchester extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Winchester';
     entryUrl = 'https://www.winchesterstudents.co.uk/groups?group_type=representational-networks&group_cat=&search=';
 

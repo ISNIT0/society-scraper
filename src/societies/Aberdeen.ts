@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Aberdeen extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Aberdeen';
     entryUrl = 'https://www.ausa.org.uk/societies/';
 

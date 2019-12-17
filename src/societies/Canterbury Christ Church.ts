@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class CanterburyChristChurch extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Canterbury Christ Church';
     entryUrl = 'https://ccsu.co.uk/activities/societies/list/';
 

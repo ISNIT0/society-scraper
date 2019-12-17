@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class BishopGrosseteste extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Bishop Grosseteste';
     entryUrl = 'https://www.bgsu.co.uk/opportunities/clubs_socs/';
 

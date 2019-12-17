@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class WestScotland extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'West Scotland';
     entryUrl = 'https://www.sauws.org.uk/societies/list/';
 

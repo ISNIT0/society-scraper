@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Chester extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Chester';
     entryUrl = 'https://www.chestersu.com/activities/societies/';
 

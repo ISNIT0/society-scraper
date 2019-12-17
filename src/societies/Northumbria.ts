@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Northumbria extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Northambria';
     entryUrl = 'https://www.mynsu.co.uk/getinvolved/societies/';
 

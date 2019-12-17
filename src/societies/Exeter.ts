@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Exeter extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Exeter';
     entryUrl = 'https://www.exeterguild.org/societies/';
 

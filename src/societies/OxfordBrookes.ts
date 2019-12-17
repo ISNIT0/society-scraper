@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class OxfordBrookes extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'OxfordBrookes';
     entryUrl = 'https://www.brookesunion.org.uk/groups';
 

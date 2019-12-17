@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Essex extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Essex';
     entryUrl = 'https://www.essexstudent.com/southend/juststart/';
 

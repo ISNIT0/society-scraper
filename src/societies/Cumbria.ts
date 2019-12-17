@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Cumbria extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Cumbria';
     entryUrl = 'https://www.ucsu.me/groups';
 

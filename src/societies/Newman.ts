@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Newman extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Newman';
     entryUrl = 'http://www.newmansu.org/societies.html';
 

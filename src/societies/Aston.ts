@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Aston extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Aston';
     entryUrl = 'https://www.astonsu.com/activities/clubsandsocieties/';
 

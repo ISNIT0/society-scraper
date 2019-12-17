@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Newcastle extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Newcastle';
     entryUrl = 'https://www.nusu.co.uk/getinvolved/societies/list/';
 

@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Northhamptoon extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Northhampton';
     entryUrl = 'https://northamptonunion.com/get-involved/sports-and-societies';
 

@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Oxford extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Oxford';
     entryUrl = 'https://www.ox.ac.uk/students/life/clubs/list?wssl=1';
 

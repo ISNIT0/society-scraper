@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Hull extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Hull';
     entryUrl = 'https://hulluniunion.com/societies/list';
 

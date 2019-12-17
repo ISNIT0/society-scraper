@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Wolverhampton extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Wolverhampton';
     entryUrl = 'https://www.wolvesunion.org/societies/currentsocieties/';
 

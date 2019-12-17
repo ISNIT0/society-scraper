@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Portsmouth extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Portsmouth';
     entryUrl = 'https://membership.upsu.net/';
 

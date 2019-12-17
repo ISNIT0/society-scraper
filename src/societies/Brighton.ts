@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Brighton extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Brighton';
     entryUrl = 'https://www.brightonsu.com/activities/find-a-society/';
 

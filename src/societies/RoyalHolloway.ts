@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class RoyalHolloway extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'RoyalHolloway';
     entryUrl = 'https://www.su.rhul.ac.uk/societies/a-z/#';
 

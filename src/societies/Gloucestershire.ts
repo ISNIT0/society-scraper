@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Gloucestershire extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Gloucestershire';
     entryUrl = 'https://www.yourstudentsunion.com/societies/join/';
 

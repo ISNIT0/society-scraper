@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Buckingham extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Buckingham';
     entryUrl = 'https://www.buckingham.ac.uk/life/social/su/societies';
 

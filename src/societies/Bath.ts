@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class bath extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Bath';
     entryUrl = 'https://www.thesubath.com/socs/';
 

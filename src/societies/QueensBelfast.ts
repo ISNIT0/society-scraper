@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class QueensBelfast extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'QueensBelfast';
     entryUrl = 'http://www.qubsu.org/ClubsSocieties/A-MList/';
 

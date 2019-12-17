@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Plymouth extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Plymouth';
     entryUrl = 'https://www.https://www.upsu.com/societies/browse/.co.uk/getinvolved/societies/list/';
 

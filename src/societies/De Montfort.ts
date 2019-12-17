@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Demontfort extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Demontfort';
     entryUrl = 'https://www.demontfortsu.com/activities/societies/browse-societies/';
 

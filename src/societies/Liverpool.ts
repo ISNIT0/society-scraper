@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Liverpool extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Liverpool';
     entryUrl = 'https://www.liverpoolguild.org/groups/';
 

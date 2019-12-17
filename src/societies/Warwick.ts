@@ -2,7 +2,7 @@ import { SocietyScraper } from "src/SocietyScraper";
 import { ElementHandle } from "puppeteer";
 
 export class Warwick extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Warwick';
     entryUrl = 'https://www.warwicksu.com/societies-sports/societies/';
 

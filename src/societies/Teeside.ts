@@ -1,7 +1,7 @@
 import { SocietyScraper } from "src/SocietyScraper";
 
 export class Teeside extends SocietyScraper {
-    whitelist = false;
+    whitelist = true;
     universityName = 'Teeside';
     entryUrl = 'https://www.tees-su.org.uk/groups?group_type=society-2488&group_cat=media-201b4253-94a6-4169-858d-582d9ee55517&search=';
 
