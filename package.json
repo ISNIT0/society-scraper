@@ -19,7 +19,7 @@
     "puppeteer": "^1.20.0",
     "structured-stream-writer": "^1.0.0",
     "ts-node": "^8.4.1",
-    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths": "^3.10.1",
     "typescript": "^3.6.4"
   }
 }
